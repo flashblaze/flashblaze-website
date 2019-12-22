@@ -1,0 +1,13 @@
+@use '../globals';
+
+.header {
+  display: flex;
+  width: 920px;
+  height: 50px;
+  padding-top: 20px;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  background-color: globals.$secondary-background-color;
+  color: globals.$secondary-text-color;
+}
