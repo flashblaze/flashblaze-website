@@ -1,5 +1,13 @@
 .info {
   display: flex;
   flex-direction: column;
-  width: 470px;
+  width: 420px;
+  margin-top: 175px;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 75px;
 }
