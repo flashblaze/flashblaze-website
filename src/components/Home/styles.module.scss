@@ -1,3 +1,15 @@
+.layout {
+  display: flex;
+  flex-direction: row;
+  max-width: 720px;
+  padding: 10px;
+
+  @media screen and (max-width: 360px) {
+    flex-direction: column;
+    width: 320px;
+  }
+}
+
 .info {
   display: flex;
   flex-direction: column;
@@ -5,7 +17,7 @@
   margin-top: 175px;
   padding: 10px;
 
-  @media screen and (max-width: 360) {
+  @media screen and (max-width: 360px) {
     width: 320px;
   }
 }
