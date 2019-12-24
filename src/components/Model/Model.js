@@ -1,7 +1,7 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Canvas, useFrame } from 'react-three-fiber';
 
-const Model = () => {
+const MyObject = () => {
   const ref = useRef();
 
   useFrame(() => (ref.current.rotation.y += 0.008));
@@ -20,8 +20,17 @@ const Model = () => {
   );
 };
 
-export default () => (
-  <Canvas pixelRatio={9}>
-    <Model />
-  </Canvas>
-);
+const Model = () => {
+  const [mobile, setMobile] = useState(1);
+  useEffect(() => {
+    setMobile(typeof window === 'undefined' || window.devicePixelRatio);
+  });
+
+  return (
+    <Canvas pixelRatio={mobile | 1}>
+      <MyObject />
+    </Canvas>
+  );
+};
+
+export default Model;
