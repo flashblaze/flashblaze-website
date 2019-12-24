@@ -13,5 +13,20 @@ module.exports = {
         implementation: require('sass'),
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Neeraj Lagwankar`,
+        short_name: `Neeraj Lagwankar`,
+        description: `Personal website of Neeraj Lagwankar`,
+        lang: `en`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#ffffff`,
+        display: `standalone`,
+        icon: `static/icon.png`,
+        theme_color_in_head: false,
+      },
+    },
   ],
 };

@@ -31,6 +31,7 @@ const Home = () => {
                 href="https://github.com/FlashBlaze"
                 rel="noopener noreferrer"
                 target="_blank"
+                aria-label="GitHub"
               >
                 <AiFillGithub />
               </a>
@@ -38,6 +39,7 @@ const Home = () => {
                 href="https://instagram.com/neeraj_artx"
                 rel="noopener noreferrer"
                 target="_blank"
+                aria-label="Instagram"
               >
                 <AiOutlineInstagram />
               </a>
@@ -45,6 +47,7 @@ const Home = () => {
                 href="https://www.youtube.com/channel/UCQKfDFA1cCAB1Oq5B6Vr7ew"
                 rel="noopener noreferrer"
                 target="_blank"
+                aria-label="YouTube"
               >
                 <AiFillYoutube />
               </a>
@@ -52,6 +55,7 @@ const Home = () => {
                 href="https://twitter.com/neeraj_artx"
                 rel="noopener noreferrer"
                 target="_blank"
+                aria-label="Twitter"
               >
                 <AiFillTwitterCircle />
               </a>
@@ -59,6 +63,7 @@ const Home = () => {
                 href="https://www.linkedin.com/in/neeraj-lagwankar/"
                 rel="noopener noreferrer"
                 target="_blank"
+                aria-label="LinkedIn"
               >
                 <AiFillLinkedin />
               </a>

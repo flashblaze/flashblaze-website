@@ -8,13 +8,13 @@
   @media screen and (max-width: 360px) {
     flex-direction: column;
     width: 320px;
-    margin-top: 75px;
+    margin-top: 50px;
   }
 
   @media screen and (max-width: 720px) {
     flex-direction: column;
     width: 360px;
-    margin-top: 75px;
+    margin-top: 50px;
   }
 }
 
@@ -35,4 +35,8 @@
   width: 300px;
   justify-content: space-between;
   margin-top: 75px;
+
+  @media screen and (max-width: 360px) {
+    margin-top: 10px;
+  }
 }
