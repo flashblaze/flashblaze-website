@@ -20,7 +20,10 @@ const Home = () => {
         <p>
           <b>React</b> and <b>Nodejs</b> developer.
         </p>
-        <p>Passionate graphics designer and animator interested in 3D stuff.</p>
+        <p>
+          Passionate graphics designer and animator who is also interested in 3D
+          stuff.
+        </p>
         <div>
           <IconContext.Provider value={{ size: '2em', color: '#3a3a3a' }}>
             <div className={homeStyles.icons}>
@@ -63,7 +66,9 @@ const Home = () => {
           </IconContext.Provider>
         </div>
       </div>
-      <Model />
+      <div className={homeStyles.model}>
+        <Model />
+      </div>
     </div>
   );
 };

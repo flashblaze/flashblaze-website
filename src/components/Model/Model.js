@@ -4,11 +4,18 @@ import { Canvas, useFrame } from 'react-three-fiber';
 const Model = () => {
   const ref = useRef();
 
-  useFrame(() => (ref.current.rotation.z -= 0.01));
+  useFrame(() => (ref.current.rotation.y += 0.008));
   return (
-    <mesh ref={ref} rotation={[90, 90, 0]} scale={[3, 3, 3]}>
-      <boxBufferGeometry attach="geometry" args={[1, 1, 1]} />
-      <meshNormalMaterial attach="material" />
+    <mesh ref={ref} rotation={[0, 0, 45]}>
+      <coneBufferGeometry attach="geometry" args={[1, 3]} />
+      <meshBasicMaterial
+        attach="material"
+        color="#3a3a3a"
+        roughness={0.5}
+        metalness={0.5}
+        wireframe={true}
+      />
+      <ambientLight />
     </mesh>
   );
 };
