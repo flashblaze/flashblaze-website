@@ -33,12 +33,12 @@ const Model = () => {
       </Canvas>
     );
   } else {
+    return (
+      <Canvas pixelRatio={window.devicePixelRatio | 1}>
+        <MyObject />
+      </Canvas>
+    );
   }
-  return (
-    <Canvas pixelRatio={window.devicePixelRatio | 1}>
-      <MyObject />
-    </Canvas>
-  );
 };
 
 export default Model;
