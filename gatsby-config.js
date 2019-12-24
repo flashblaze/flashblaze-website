@@ -28,5 +28,11 @@ module.exports = {
         theme_color_in_head: false,
       },
     },
+    {
+      resolve: 'gatsby-plugin-offline',
+      options: {
+        precachePages: [`/wip/`],
+      },
+    },
   ],
 };
