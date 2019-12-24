@@ -7,7 +7,6 @@
   padding-top: 20px;
   align-items: center;
   justify-content: center;
-  color: globals.$primary-text-color;
 
   @media screen and (max-width: 360px) {
     width: 360px;
@@ -16,4 +15,9 @@
   @media screen and (max-width: 720px) {
     width: 360px;
   }
+}
+
+.nav-elements {
+  text-decoration: none;
+  color: globals.$primary-text-color;
 }
