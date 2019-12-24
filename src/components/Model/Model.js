@@ -21,7 +21,7 @@ const Model = () => {
 };
 
 export default () => (
-  <Canvas>
+  <Canvas pixelRatio={window.devicePixelRatio}>
     <Model />
   </Canvas>
 );
