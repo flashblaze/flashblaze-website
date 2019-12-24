@@ -21,11 +21,6 @@ const MyObject = () => {
 };
 
 const Model = () => {
-  const [mobile, setMobile] = useState(1);
-  if (typeof window === 'undefined') {
-    setMobile(3);
-  }
-
   if (typeof window === 'undefined') {
     return (
       <Canvas pixelRatio={3}>
