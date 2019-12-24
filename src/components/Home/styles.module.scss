@@ -10,6 +10,12 @@
     width: 320px;
     margin-top: 75px;
   }
+
+  @media screen and (max-width: 720px) {
+    flex-direction: column;
+    width: 360px;
+    margin-top: 75px;
+  }
 }
 
 .info {
