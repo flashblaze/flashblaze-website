@@ -22,12 +22,20 @@ const MyObject = () => {
 
 const Model = () => {
   const [mobile, setMobile] = useState(1);
-  useEffect(() => {
-    setMobile(typeof window === 'undefined' || window.devicePixelRatio);
-  });
+  if (typeof window === 'undefined') {
+    setMobile(3);
+  }
 
+  if (typeof window === 'undefined') {
+    return (
+      <Canvas pixelRatio={3}>
+        <MyObject />
+      </Canvas>
+    );
+  } else {
+  }
   return (
-    <Canvas pixelRatio={mobile | 1}>
+    <Canvas pixelRatio={window.devicePixelRatio | 1}>
       <MyObject />
     </Canvas>
   );
