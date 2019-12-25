@@ -1,12 +1,36 @@
 import React, { useRef } from 'react';
-import { Canvas, useFrame } from 'react-three-fiber';
+import { Canvas, extend, useThree, useRender } from 'react-three-fiber';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+
+extend({ OrbitControls });
+
+const Controls = () => {
+  const { camera, gl } = useThree();
+  const orbitRef = useRef();
+
+  useRender(() => {
+    orbitRef.current.update();
+  });
+
+  return (
+    <orbitControls
+      autoRotate
+      maxPolarAngle={Math.PI / 3}
+      minPolarAngle={Math.PI / 3}
+      args={[camera, gl.domElement]}
+      ref={orbitRef}
+      enableZoom={false}
+      enablePan={false}
+    />
+  );
+};
 
 const MyObject = () => {
-  const ref = useRef();
+  // const ref = useRef();
 
-  useFrame(() => (ref.current.rotation.y += 0.008));
+  // useFrame(() => (ref.current.rotation.y += 0.008));
   return (
-    <mesh ref={ref} rotation={[0, 0, 45]} position={[0, 1.5, 0]}>
+    <mesh rotation={[0, 0, 0]} position={[0, 1.5, 0]}>
       <coneBufferGeometry attach="geometry" args={[1.5, 2.5]} />
       <meshBasicMaterial
         attach="material"
@@ -24,12 +48,14 @@ const Model = () => {
   if (typeof window === 'undefined') {
     return (
       <Canvas pixelRatio={3}>
+        <Controls />
         <MyObject />
       </Canvas>
     );
   } else {
     return (
       <Canvas pixelRatio={window.devicePixelRatio | 1}>
+        <Controls />
         <MyObject />
       </Canvas>
     );
