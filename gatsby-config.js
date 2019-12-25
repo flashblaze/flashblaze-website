@@ -34,5 +34,11 @@ module.exports = {
         precachePages: [`/wip/`],
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-146150441-2',
+      },
+    },
   ],
 };
