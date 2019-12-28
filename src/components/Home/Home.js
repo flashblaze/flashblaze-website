@@ -14,7 +14,7 @@ import homeStyles from './styles.module.scss';
 
 const Home = () => {
   return (
-    <div className={homeStyles.layout}>
+    <div className={homeStyles.container}>
       <div className={homeStyles.info}>
         <h1>Neeraj Lagwankar</h1>
         <p>
