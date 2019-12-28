@@ -51,7 +51,7 @@ const About = () => {
         <p>
           Get in touch: <i>neerajlagwankar@gmail.com</i>
         </p>
-        <p>I'm also, available here:</p>
+        <p>I'm also available here:</p>
         <ul>
           <li>
             <a
