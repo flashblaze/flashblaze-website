@@ -25,7 +25,6 @@ module.exports = {
         theme_color: `#ffffff`,
         display: `standalone`,
         icon: `static/icon.png`,
-        theme_color_in_head: false,
       },
     },
     {

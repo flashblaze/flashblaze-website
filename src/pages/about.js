@@ -7,7 +7,7 @@ import About from '../components/About/About';
 const Index = () => {
   return (
     <Layout>
-      <Head />
+      <Head title="About" />
       <About />
     </Layout>
   );

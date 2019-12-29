@@ -7,7 +7,7 @@ import Home from '../components/Home/Home';
 const Index = () => {
   return (
     <Layout>
-      <Head />
+      <Head title="Neeraj Lagwankar" />
       <Home />
     </Layout>
   );

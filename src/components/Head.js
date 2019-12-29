@@ -1,11 +1,11 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-const Head = () => {
+const Head = props => {
   return (
     <div>
       <Helmet>
-        <title>Neeraj Lagwankar</title>
+        <title>{props.title}</title>
         <meta charSet="UTF-8" />
         <meta name="author" content="Neeraj Lagwankar" />
         <meta
