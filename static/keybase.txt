@@ -1,0 +1,59 @@
+flashblaze
+Neeraj Lagwankar
+Pune, India
+==================================================================
+https://keybase.io/flashblaze
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://flashblaze.xyz
+  * I am flashblaze (https://keybase.io/flashblaze) on keybase.
+  * I have a public key ASDU0bnWpTW4Z75HGY1s-Rl2BWZfr35YWQMjkVXd7yru9Ao
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120d4d1b9d6a535b867be47198d6cf9197605665faf7e585903239155ddef2aeef40a",
+      "host": "keybase.io",
+      "kid": "0120d4d1b9d6a535b867be47198d6cf9197605665faf7e585903239155ddef2aeef40a",
+      "uid": "27881c3926e924bf4f568c34a1112619",
+      "username": "flashblaze"
+    },
+    "merkle_root": {
+      "ctime": 1582372338,
+      "hash": "1dade108caaf8047826f96b7141a6b5cc5a4bfcf447aa622054fa480f91a895b6d6f8abdedb631e34845257787ca9349d11c68f292bd411de7f51416b767666f",
+      "hash_meta": "c039df26fa62dc39aca57f79d44b6ef3dea8555776d31dc8db4f660fb0f7fd80",
+      "seqno": 14693947
+    },
+    "service": {
+      "entropy": "rcR4CeeiNCA81NzReTVSbsNQ",
+      "hostname": "flashblaze.xyz",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.2.0"
+  },
+  "ctime": 1582372372,
+  "expire_in": 504576000,
+  "prev": "372f77c7689b08faced6f0a8876742be6353dd430caf96f753ac307af66abd2e",
+  "seqno": 6,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg1NG51qU1uGe+RxmNbPkZdgVmX69+WFkDI5FV3e8q7vQKp3BheWxvYWTESpcCBsQgNy93x2ibCPrO1vCoh2dCvmNT3UMMr5b3U6wwevZqvS7EIHVeqqHDIIYh6sq3qDPKhepPfM1qysgw9NxXewL4r/kpAgHCo3NpZ8RAi4J+7/oSME4smKD6BmFT7aBKANoeA+KvwchRIahO/IhcLpK4awezmgHsVhBq1FBrfBy7seuOutP6v3XsFzzmCahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIEyi/lXOQxCrPmKyjIehgIuahlU+F8ukxhMnt+pwdWoLo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/flashblaze
+
+==================================================================

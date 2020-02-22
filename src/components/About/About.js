@@ -3,26 +3,30 @@ import React from 'react';
 import aboutStyles from './styles.module.scss';
 
 const About = () => {
+  // Month starts from 0
+  // const birthday = new Date(1997, 1, 6);
+  // const ageDiff = new Date(Date.now() - birthday.getTime());
+  // const age = Math.abs(ageDiff.getUTCFullYear() - 1970);
+
   return (
     <div className={aboutStyles.container}>
       <div className={aboutStyles.about}>
         <h2>About me</h2>
-        <p>
-          I'm a 22 year old front-end developer who likes to work with{' '}
-          <b>React</b> and <b>Nodejs</b>. I like building minimalist UIs and
-          everything I have done can be found on{' '}
-          <a
-            href="https://github.com/FlashBlaze"
-            rel="noopener noreferrer"
-            target="_blank"
-            aria-label="GitHub"
-          >
-            GitHub
-          </a>
-          .
+        <div>
           <p>
-            I also like to develop some simple scripts using <b>Python</b> such
-            as{' '}
+            I'm a 23 year old front-end developer who likes to work with{' '}
+            <b>React</b> and <b>Nodejs</b>. I like building minimalist UIs and
+            everything I have done can be found on{' '}
+            <a
+              href="https://github.com/FlashBlaze"
+              rel="noopener noreferrer"
+              target="_blank"
+              aria-label="GitHub"
+            >
+              GitHub
+            </a>
+            . <br />I also like to develop some simple scripts using{' '}
+            <b>Python</b> such as{' '}
             <a
               href="https://github.com/FlashBlaze/yts-downloader"
               rel="noopener noreferrer"
@@ -43,7 +47,7 @@ const About = () => {
             .
           </p>
           <p>I also love working with After Effects, Photoshop, and Blender.</p>
-        </p>
+        </div>
       </div>
 
       <div className={aboutStyles.contactMe}>
