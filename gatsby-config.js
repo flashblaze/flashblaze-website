@@ -74,6 +74,9 @@ module.exports = {
               size: 32,
             },
           },
+          {
+            resolve: `gatsby-remark-prismjs`,
+          },
         ],
       },
     },

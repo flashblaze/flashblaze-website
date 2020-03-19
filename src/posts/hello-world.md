@@ -8,3 +8,7 @@ date: '2020-03-19'
 _Hello World_
 
 :computer:
+
+```js
+console.log('Hello World!');
+```
