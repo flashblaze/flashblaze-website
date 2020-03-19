@@ -4,9 +4,9 @@ import aboutStyles from './styles.module.scss';
 
 const About = () => {
   // Month starts from 0
-  // const birthday = new Date(1997, 1, 6);
-  // const ageDiff = new Date(Date.now() - birthday.getTime());
-  // const age = Math.abs(ageDiff.getUTCFullYear() - 1970);
+  const birthday = new Date(1997, 1, 6);
+  const ageDiff = new Date(Date.now() - birthday.getTime());
+  const age = Math.abs(ageDiff.getUTCFullYear() - 1970);
 
   return (
     <div className={aboutStyles.container}>
@@ -14,7 +14,7 @@ const About = () => {
         <h2>About me</h2>
         <div>
           <p>
-            I'm a 23 year old front-end developer who likes to work with{' '}
+            I'm a {age} year old front-end developer who likes to work with{' '}
             <b>React</b> and <b>Nodejs</b>. I like building minimalist UIs and
             everything I have done can be found on{' '}
             <a

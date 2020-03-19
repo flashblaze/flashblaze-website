@@ -1,6 +1,6 @@
 module.exports = {
   plugins: [
-    'gatsby-plugin-react-helmet',
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {
@@ -28,7 +28,7 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-offline',
+      resolve: `gatsby-plugin-offline`,
       options: {
         precachePages: [`/wip/`],
       },
@@ -40,12 +40,20 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-verify-brave',
+      resolve: `gatsby-plugin-verify-brave`,
       options: {
         token:
           'e19c0d9e84864f737bffd0aa6f6d5a2353e5d718073ac50167e5e36c74324993',
         domain: 'flashblaze.xyz',
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `src`,
+        path: `${__dirname}/src/`,
+      },
+    },
+    `gatsby-transformer-remark`,
   ],
 };
