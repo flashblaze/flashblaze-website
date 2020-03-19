@@ -67,13 +67,7 @@ module.exports = {
               linkImagesToOriginal: false,
             },
           },
-          {
-            resolve: `gatsby-remark-emojis`,
-            options: {
-              active: true,
-              size: 32,
-            },
-          },
+          `gatsby-remark-emoji`,
           {
             resolve: `gatsby-remark-prismjs`,
           },

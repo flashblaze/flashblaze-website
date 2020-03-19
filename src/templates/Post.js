@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout/Layout';
+import styles from './styles.module.scss';
 
 export const query = graphql`
   query($slug: String!) {
@@ -16,13 +17,20 @@ export const query = graphql`
 `;
 
 const Post = props => {
+  const date = new Date(props.data.markdownRemark.frontmatter.date);
+  const parsedDate = date.toUTCString().slice(0, 16);
+
   return (
     <Layout>
-      <h1>{props.data.markdownRemark.frontmatter.title}</h1>
-      <p>{props.data.markdownRemark.frontmatter.date}</p>
-      <div
-        dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }}
-      ></div>
+      <div className={styles.container}>
+        <div className={styles.metadata}>
+          <h1>{props.data.markdownRemark.frontmatter.title}</h1>
+          <p>{parsedDate}</p>
+        </div>
+        <div
+          dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }}
+        ></div>
+      </div>
     </Layout>
   );
 };

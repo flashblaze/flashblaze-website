@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, graphql, useStaticQuery } from 'gatsby';
 
+import styles from './styles.module.scss';
+
 const Posts = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -21,20 +23,23 @@ const Posts = () => {
   `);
 
   return (
-    <div>
-      <h1>Posts</h1>
-      <ol>
+    <div className={styles.container}>
+      {/* <h1 className={styles.pageHeading}>Posts</h1> */}
+      <div className={styles.post}>
         {data.allMarkdownRemark.edges.map(edge => {
+          const date = new Date(edge.node.frontmatter.date);
+          const parsedDate = date.toUTCString().slice(0, 16);
+
           return (
-            <li>
+            <div>
               <Link to={`/posts/${edge.node.fields.slug}`}>
                 <h2>{edge.node.frontmatter.title}</h2>
               </Link>
-              <p>{edge.node.frontmatter.date}</p>
-            </li>
+              <p>{parsedDate}</p>
+            </div>
           );
         })}
-      </ol>
+      </div>
     </div>
   );
 };

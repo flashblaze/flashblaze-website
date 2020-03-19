@@ -16,15 +16,13 @@
   }
 }
 
-a {
-  text-decoration: none;
-  color: #227bb9;
+.post {
+  line-height: 0;
+  p {
+    font-size: 16px;
+  }
 }
 
-a:hover {
-  color: #1c6497;
-}
-
-.contact-me {
-  margin-top: 50px;
-}
+// .page-heading {
+//   margin-bottom: 50px;
+// }
