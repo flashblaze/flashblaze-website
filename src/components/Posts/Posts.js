@@ -16,7 +16,6 @@ const Posts = () => {
       }
     }
   `);
-  console.log(data);
 
   return (
     <div>
