@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Canvas, extend, useThree, useRender } from 'react-three-fiber';
+import { Canvas, extend, useThree, useFrame } from 'react-three-fiber';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 extend({ OrbitControls });
@@ -8,7 +8,7 @@ const Controls = () => {
   const { camera, gl } = useThree();
   const orbitRef = useRef();
 
-  useRender(() => {
+  useFrame(() => {
     orbitRef.current.update();
   });
 
