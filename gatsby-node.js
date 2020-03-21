@@ -4,7 +4,8 @@ exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions;
 
   if (node.internal.type === 'MarkdownRemark') {
-    const slug = path.basename(node.fileAbsolutePath, '.md');
+    const fileName = path.basename(node.fileAbsolutePath, '.md');
+    const slug = fileName.slice(11, fileName.length);
 
     createNodeField({
       node,
