@@ -3,11 +3,11 @@ import Typography from 'typography';
 const typography = new Typography({
   baseFontSize: '18rem',
   baseLineHeight: 1.5,
-  headerFontFamily: ['Roboto', 'sans-serif'],
+  headerFontFamily: ['Rubik', 'sans-serif'],
   bodyFontFamily: ['Open Sans', 'sans-serif'],
   googleFonts: [
     {
-      name: 'Roboto',
+      name: 'Rubik',
       styles: ['700'],
     },
     {

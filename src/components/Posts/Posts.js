@@ -25,13 +25,13 @@ const Posts = () => {
   return (
     <div className={styles.container}>
       {/* <h1 className={styles.pageHeading}>Posts</h1> */}
-      <div className={styles.post}>
+      <div className={styles.posts}>
         {data.allMarkdownRemark.edges.map(edge => {
           const date = new Date(edge.node.frontmatter.date);
           const parsedDate = date.toUTCString().slice(0, 16);
 
           return (
-            <div>
+            <div className={styles.post}>
               <Link to={`/posts/${edge.node.fields.slug}`}>
                 <h2>{edge.node.frontmatter.title}</h2>
               </Link>

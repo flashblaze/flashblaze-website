@@ -26,6 +26,7 @@ const Post = props => {
         <div className={styles.metadata}>
           <h1>{props.data.markdownRemark.frontmatter.title}</h1>
           <p>{parsedDate}</p>
+          <hr />
         </div>
         <div
           dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }}

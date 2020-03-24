@@ -44,19 +44,62 @@ const About = () => {
             >
               reddit-bots
             </a>
-            .
+            . Recently I'm also getting into minor app development using{' '}
+            <b>Flutter</b>. You can find the app <i>Hacker News Reader</i> on{' '}
+            <a
+              href="https://play.google.com/store/apps/details?id=com.flashblaze.ycnews"
+              rel="noopener noreferrer"
+              target="_blank"
+              aria-label="Hacker News Reader link"
+            >
+              Play Store
+            </a>{' '}
+            and the source code on{' '}
+            <a
+              href="https://github.com/FlashBlaze/ycnews"
+              rel="noopener noreferrer"
+              target="_blank"
+              aria-label="GitHub Hacker News Reader link"
+            >
+              GitHub
+            </a>
           </p>
-          <p>I also love working with After Effects, Photoshop, and Blender.</p>
+          <p>
+            I also love working with After Effects, Photoshop, Gimp and Blender.
+          </p>
         </div>
       </div>
 
       <div className={aboutStyles.contactMe}>
         <h2>Contact me</h2>
         <p>
-          Get in touch: <i>neerajlagwankar@gmail.com</i>
+          Get in touch:{' '}
+          <a href="mailto:neerajlagwankar@gmail.com">
+            <i>neerajlagwankar@gmail.com</i>
+          </a>
         </p>
-        <p>I'm also available here:</p>
+        <p>Find me here:</p>
         <ul>
+          <li>
+            <a
+              href="https://github.com/FlashBlaze"
+              rel="noopener noreferrer"
+              target="_blank"
+              aria-label="GitHub link"
+            >
+              GitHub
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://play.google.com/store/apps/developer?id=Neeraj+Lagwankar"
+              rel="noopener noreferrer"
+              target="_blank"
+              aria-label="Play Store link"
+            >
+              Play Store
+            </a>
+          </li>
           <li>
             <a
               href="https://www.linkedin.com/in/neeraj-lagwankar/"
