@@ -34,7 +34,11 @@ const ViewCounter = ({ id }) => {
   // useEffect(() => {
   // }, [id]);
 
-  return <div>{viewCount ? viewCount : `---`} views</div>;
+  return (
+    <div style={{ color: '#7e7e7e' }}>
+      {viewCount ? viewCount : `---`} views
+    </div>
+  );
 };
 
 export default ViewCounter;
