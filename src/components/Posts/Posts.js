@@ -26,7 +26,7 @@ const Posts = () => {
     <div className={styles.container}>
       {/* <h1 className={styles.pageHeading}>Posts</h1> */}
       <div className={styles.posts}>
-        {data.allMarkdownRemark.edges.map(edge => {
+        {data.allMarkdownRemark.edges.map((edge) => {
           const date = new Date(edge.node.frontmatter.date);
           const parsedDate = date.toUTCString().slice(0, 16);
 
