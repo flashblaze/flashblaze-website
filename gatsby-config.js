@@ -2,7 +2,11 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 module.exports = {
+  siteMetadata: {
+    siteUrl: `https://flashblaze.xyz`,
+  },
   plugins: [
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-typography`,
