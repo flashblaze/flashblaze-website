@@ -22,11 +22,18 @@ const Posts = () => {
     }
   `);
 
+  const newEdges = data.allMarkdownRemark.edges.reduce((filtered, edge) => {
+    if (!edge.node.fields.slug.startsWith('draft')) {
+      filtered.push(edge);
+    }
+    return filtered;
+  }, []);
+
   return (
     <div className={styles.container}>
       {/* <h1 className={styles.pageHeading}>Posts</h1> */}
       <div className={styles.posts}>
-        {data.allMarkdownRemark.edges.map((edge) => {
+        {newEdges.map((edge) => {
           const date = new Date(edge.node.frontmatter.date);
           const parsedDate = date.toUTCString().slice(0, 16);
 

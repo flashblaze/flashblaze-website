@@ -5,7 +5,12 @@ exports.onCreateNode = ({ node, actions }) => {
 
   if (node.internal.type === 'MarkdownRemark') {
     const fileName = path.basename(node.fileAbsolutePath, '.md');
-    const slug = fileName.slice(11, fileName.length);
+    let slug = '';
+    if (fileName.startsWith('draft')) {
+      slug = fileName;
+    } else {
+      slug = fileName.slice(11, fileName.length);
+    }
 
     createNodeField({
       node,
