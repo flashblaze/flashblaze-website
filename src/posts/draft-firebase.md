@@ -106,8 +106,8 @@ MEASUREMENT_ID='your_values_here'
     },
 ```
 
-5. Install `env-cmd` as a dev dependency to use the environment variables by typing `npm i -D env-cmd`
-6. Modify `develop` command in `package.json` to `env-cmd -f .env gatsby develop` to use `env-cmd`.
+5. Install [env-cmd](https://npmjs.org/package/env-cmd) as a dev dependency to use the environment variables by typing `npm i -D env-cmd`
+6. Modify "develop" command in `package.json` to `env-cmd -f .env gatsby develop`
 7. Add the below code to `gatsby-config.js`
 
 ```js
@@ -145,7 +145,7 @@ export default Index;
 ```
 src
  |-lib
-    |-view-counter.js
+    |-increment-views.js
 ```
 
 4. Copy the below code into the file
@@ -167,7 +167,7 @@ export default incrementViews;
 
 This basically creates a reference of database to and creates an entry of `id` under views. Different ids will create additional entries and will update the view whenever the function is called.
 
-`ref.transaction()` is used to modify the data at the location. In our case `currentViews` of `id` are incremented.
+`ref.transaction()` is used to modify the data at the location. In our case `views` of `id` are incremented.
 
 5. Create a file `ViewCounter.js` under `src/components/` and copy the below code
 
@@ -210,4 +210,12 @@ export default ViewCounter;
 
 On loading this component, `id` is sent to `increment-views` to increment the value and the returned value is stored in `viewCount`.
 
-Upon completion, if an instance of database exists, detache it using `off()`
+Upon completion, if an instance of database exists, detach it using `off()`
+
+6. Now everytime you refresh the page or anyone visits it, viewcount will be incremented
+
+### Deployment
+
+Since I have deployed my site on [Zeit](https://zeit.co/), it uses [now secrets](https://zeit.co/docs/v2/build-step#adding-secrets). Each host provider has a different mechanism to handle environment variables.
+
+I hope you've liked this post. Any suggestions, improvements are welcome.
