@@ -262,3 +262,7 @@ Firebase Views
 Since I have deployed my site on [Zeit](https://zeit.co/), it uses [now secrets](https://zeit.co/docs/v2/build-step#adding-secrets). Each host provider has a different mechanism to handle environment variables.
 
 I hope you've liked this post. Any suggestions, improvements are welcome.
+
+<br/>
+
+### You can view the complete project on [GitHub](https://github.com/FlashBlaze/gatsby-firebase-realtime-views)
