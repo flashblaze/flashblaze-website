@@ -1,6 +1,6 @@
 ---
 title: 'Displaying Real-Time Views using React, Gatsby and Firebase'
-date: '2020-04-06'
+date: '2020-04-07'
 ---
 
 This post is my take on displying real-time views using Firebase and React. This has previously been done by Guillermo Rauch on [rauchg.com](https://rauchg.com) and Lee Robinson on [leerob.io](https://leerob.io).
@@ -19,20 +19,44 @@ Another reason being, both websites are using [Nextjs](https://nextjs.org/) whil
 ### Setting up Firebase
 
 1. Sign in to [Firebase](https://firebase.google.com/) and go to [console](https://console.firebase.google.com/) and create a new project. I'll name mine **react-gatsby-views**. You can enable Google Analytics if you want and click on create project
+
+![Console Image](./assets/real-time-views/1_console.png)
+
 2. Navigate to Develop -> Database and click on "Create Database"
 3. Choose "Start in Test Mode"
+
+![Database Image](./assets/real-time-views/2_database.png)
+
 4. Choose your location and click on "Done"
-5. Click on "Project Settings" click on web icon to create a "Web App"
-6. Enter your name, I'll name mine **react-gatsby-views-app** do not enable Firebase hosting and click on "Register app"
-7. Click on "Continue to console" as we'll need the config object later
-8. Go to "Database" and select "Realtime Database"
-9. Go to "Rules" and set `read`, `write` to `true` and click on "Publish" allowing us to update data without sigining in and using the config object
+5. Click on "Project Settings".
+
+![Go To Project Settings Image](./assets/real-time-views/3_go_to_project.png)
+
+6. Click on web icon to create a "Web App"
+
+![Project Settings Image](./assets/real-time-views/4_settings.png)
+
+7. Enter your name, I'll name mine **react-gatsby-views-app** do not enable Firebase hosting and click on "Register app"
+
+![Register App Image](./assets/real-time-views/5_register.png)
+
+8. Click on "Continue to console" as we'll need the config object later
+
+![Continue to Console Image](./assets/real-time-views/6_continue_to_console.png)
+
+9. Go to "Database" and select "Realtime Database"
+
+![Selecting Realtime Database Image](./assets/real-time-views/7_select_realtime.png)
+
+10. Go to "Rules" and set `read`, `write` to `true` and click on "Publish" allowing us to update data without sigining in and using the config object
+
+![Change Rules Image](./assets/real-time-views/8_change_rules.png)
 
 <br/>
 
 ### Setting up Gatsby
 
-1. Create a [Gatsby](https://www.gatsbyjs.org/docs/quick-start) project by typing `npx gatsby new your-project-name` in your terminal.
+1. Create a [Gatsby](https://www.gatsbyjs.org/docs/quick-start) project by typing `npx gatsby new enter_project_name` in your terminal.
 2. Go inside the created directory and install [gatsby-firebase-plugin](https://www.gatsbyjs.org/packages/gatsby-plugin-firebase/?=firebase) and [firebase](https://www.npmjs.com/package/firebase) by typing `npm install firebase gatsby-plugin-firebase` in your terminal.
 3. Register the Gatsby plugin by adding the below lines to your `gatsby-config.js` file
 
@@ -73,7 +97,13 @@ import 'firebase/database';
 ### Integration
 
 1. Go to your Firbase console and select your web app.
+
+![Choose Web App Image](./assets/real-time-views/9_web_app.png)
+
 2. Scroll down to Your apps and and copy the `firebaseConfig` object.
+
+![Config Object Image](./assets/real-time-views/10_config.png)
+
 3. Create an `.env` file at the root of your project and paste the content like so
 
 ```
@@ -139,7 +169,12 @@ const Index = () => (
 export default Index;
 ```
 
-2.  Don't worry if you get an error, we'll create the `ViewCounter` component in just a minute.
+2.  Don't worry if you get an error
+
+![Error Image](./assets/real-time-views/11_error.png)
+
+we'll create the `ViewCounter` component in just a minute.
+
 3.  Create directory `lib` under `src` and a file named `increment-views.js` in it. It should look like this
 
 ```
@@ -212,7 +247,15 @@ On loading this component, `id` is sent to `increment-views` to increment the va
 
 Upon completion, if an instance of database exists, detach it using `off()`
 
-6. Now everytime you refresh the page or anyone visits it, viewcount will be incremented
+6. Now everytime you refresh the page or anyone visits it, view count will be incremented
+
+App Views
+
+![App Success Image](./assets/real-time-views/12_success.png)
+
+Firebase Views
+
+![Firebase Success Image](./assets/real-time-views/13_success_fb.png)
 
 ### Deployment
 
