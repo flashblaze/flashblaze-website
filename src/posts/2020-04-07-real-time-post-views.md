@@ -6,7 +6,7 @@ date: '2020-04-07'
 This post is my take on displaying real-time views using Firebase and React. This has previously been done by Guillermo Rauch on [rauchg.com](https://rauchg.com) and Lee Robinson on [leerob.io](https://leerob.io).
 Lee also explains how he did this in his [blog](https://leerob.io/blog/real-time-post-views).
 
-So why should you read _my_ post if they have already done so and even explained it? The reason being, both of the implementations require some sort of node environment to execute code while my post shows how you can achieve it on the _client-side_.
+So why should you read _my_ post if they have already done so and even explained it? The reason being, both implementations require some sort of node environment to execute code while my post shows how you can achieve it on the _client-side_.
 
 Another reason being, both websites are using [Nextjs](https://nextjs.org/) while mine is using [Gatsbyjs](https://www.gatsbyjs.org/) and I couldn't find anything related to it. So here we are.
 
@@ -247,7 +247,7 @@ On loading this component, `id` is sent to `increment-views` to increment the va
 
 Upon completion, if an instance of database exists, detach it using `off()`
 
-6. Now everytime you refresh the page or anyone visits it, view count will be incremented
+6. Now everytime you refresh the page or anyone visits it, view count will be incremented.
 
 App Views
 
