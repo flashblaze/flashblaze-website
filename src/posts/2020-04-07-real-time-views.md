@@ -36,7 +36,7 @@ Another reason being, both websites are using [Nextjs](https://nextjs.org/) whil
 
 ![Project Settings Image](./assets/real-time-views/4_settings.png)
 
-7. Enter your name, I'll name mine **react-gatsby-views-app** do not enable Firebase hosting and click on "Register app"
+7. Enter your name. I'll name mine **react-gatsby-views-app**. Do not enable Firebase hosting and click on "Register app"
 
 ![Register App Image](./assets/real-time-views/5_register.png)
 
@@ -96,7 +96,7 @@ import 'firebase/database';
 
 ### Integration
 
-1. Go to your Firbase console and select your web app.
+1. Go to your Firebase console and select your web app.
 
 ![Choose Web App Image](./assets/real-time-views/9_web_app.png)
 
