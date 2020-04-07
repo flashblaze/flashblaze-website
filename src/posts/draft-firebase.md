@@ -3,7 +3,7 @@ title: 'Displaying Real-Time Views using React, Gatsby and Firebase'
 date: '2020-04-06'
 ---
 
-This post is my take on displying real-time views using Firebase and React. This is previously done by Guillermo Rauch on [rauchg.com](https://rauchg.com) and Lee Robinson on [leerob.io](https://leerob.io).
+This post is my take on displying real-time views using Firebase and React. This has previously been done by Guillermo Rauch on [rauchg.com](https://rauchg.com) and Lee Robinson on [leerob.io](https://leerob.io).
 Lee also explains how he did this in his [blog](https://leerob.io/blog/real-time-post-views).
 
 So why should you read _my_ post if they have already done so and even explained it? The reason being, both of the implementations require some sort of node environment to execute code while my post shows how you can achieve it on the _client-side_.
@@ -67,3 +67,147 @@ you can refer the documentation [here](https://www.gatsbyjs.org/packages/gatsby-
 // gatsby-browser.js and gatsby-ssr.js
 import 'firebase/database';
 ```
+
+<br/>
+
+### Integration
+
+1. Go to your Firbase console and select your web app.
+2. Scroll down to Your apps and and copy the `firebaseConfig` object.
+3. Create an `.env` file at the root of your project and paste the content like so
+
+```
+API_KEY='your_values_here'
+AUTH_DOMAIN='your_values_here'
+DATABASE_URL='your_values_here'
+PROJECT_ID='your_values_here'
+STORAGE_BUCKET='your_values_here'
+MESSAGING_SENDER_ID='your_values_here'
+APP_ID='your_values_here'
+MEASUREMENT_ID='your_values_here'
+```
+
+4. Edit the `gatsby-config.js` file to consume the environment variables
+
+```js
+    {
+      resolve: 'gatsby-plugin-firebase',
+      options: {
+        credentials: {
+          apiKey: process.env.API_KEY,
+          authDomain: process.env.AUTH_DOMAIN,
+          databaseURL: process.env.DATABASE_URL,
+          projectId: process.env.PROJECT_ID,
+          storageBucket: process.env.STORAGE_BUCKET,
+          messagingSenderId: process.env.MESSAGING_SENDER_ID,
+          appId: process.env.APP_ID,
+        },
+      },
+    },
+```
+
+5. Install `env-cmd` as a dev dependency to use the environment variables by typing `npm i -D env-cmd`
+6. Modify `develop` command in `package.json` to `env-cmd -f .env gatsby develop` to use `env-cmd`.
+7. Add the below code to `gatsby-config.js`
+
+```js
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+module.exports = {
+  ...
+}
+```
+
+<br/>
+
+### Implementation
+
+1. Go to `src/pages/` and remove the unnecessary content with a simple one
+
+```js
+// index.js
+import React from 'react';
+import ViewCounter from '../components/ViewCounter';
+
+const Index = () => (
+  <div>
+    <ViewCounter id="index" />
+  </div>
+);
+
+export default Index;
+```
+
+2.  Don't worry if you get an error, we'll create the `ViewCounter` component in just a minute.
+3.  Create directory `lib` under `src` and a file named `increment-views.js` in it. It should look like this
+
+```
+src
+ |-lib
+    |-view-counter.js
+```
+
+4. Copy the below code into the file
+
+```js
+// increment-views.js
+import firebase from 'gatsby-plugin-firebase';
+
+const incrementViews = async (id) => {
+  const ref = firebase.database().ref(`/views`).child(id);
+
+  ref.transaction((currentViews) => {
+    return currentViews + 1;
+  });
+};
+
+export default incrementViews;
+```
+
+This basically creates a reference of database to and creates an entry of `id` under views. Different ids will create additional entries and will update the view whenever the function is called.
+
+`ref.transaction()` is used to modify the data at the location. In our case `currentViews` of `id` are incremented.
+
+5. Create a file `ViewCounter.js` under `src/components/` and copy the below code
+
+```js
+// ViewCounter.js
+import React, { useEffect, useState } from 'react';
+import firebase from 'gatsby-plugin-firebase';
+import incrementViews from '../lib/increment-views';
+
+const ViewCounter = ({ id }) => {
+  const [viewCount, setViewCount] = useState('');
+
+  useEffect(() => {
+    // 1 is displayed for a split second and then the correct count
+    // This is a workaround
+    const onViews = (newViews) => {
+      setViewCount(newViews.val() === 1 ? 0 : newViews.val());
+    };
+
+    incrementViews(id);
+
+    firebase.database().ref(`/views`).child(id).on(`value`, onViews);
+
+    return () => {
+      if (firebase.database()) {
+        firebase.database().ref(`/views`).child(id).off(`value`, onViews);
+      }
+    };
+  }, [id]);
+
+  return (
+    <div style={{ color: '#7e7e7e' }}>
+      {viewCount ? viewCount : `---`} views
+    </div>
+  );
+};
+
+export default ViewCounter;
+```
+
+On loading this component, `id` is sent to `increment-views` to increment the value and the returned value is stored in `viewCount`.
+
+Upon completion, if an instance of database exists, detache it using `off()`
