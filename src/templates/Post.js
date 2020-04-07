@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout/Layout';
 import styles from './styles.module.scss';
 import ViewCounter from '../components/ViewCounter';
+import Head from '../components/Head';
 
 export const query = graphql`
   query($slug: String!) {
@@ -30,6 +31,7 @@ const Post = (props) => {
   return (
     <Layout>
       <div className={styles.container}>
+        <Head title={props.data.markdownRemark.frontmatter.title} />
         <div className={styles.metadata}>
           <h1>{props.data.markdownRemark.frontmatter.title}</h1>
           <div className={styles.dateViews}>
