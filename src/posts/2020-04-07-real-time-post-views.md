@@ -1,5 +1,5 @@
 ---
-title: 'Displaying Real-Time Views using React, Gatsby and Firebase'
+title: 'Displaying Real-Time Page Views using React, Gatsby and Firebase'
 date: '2020-04-07'
 ---
 
@@ -200,7 +200,7 @@ const incrementViews = async (id) => {
 export default incrementViews;
 ```
 
-This basically creates a reference of database to and creates an entry of `id` under views. Different ids will create additional entries and will update the view whenever the function is called.
+This basically creates a reference of database at `/views` and creates an entry of `id` under views. Different ids will create additional entries and will update the view whenever the function is called.
 
 `ref.transaction()` is used to modify the data at the location. In our case `views` of `id` are incremented.
 
