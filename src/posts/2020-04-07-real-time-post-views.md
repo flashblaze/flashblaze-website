@@ -1,9 +1,9 @@
 ---
-title: 'Displaying Real-Time Views using React, Gatsby and Firebase'
+title: 'Displaying Real-Time Post Views using React, Gatsby and Firebase'
 date: '2020-04-07'
 ---
 
-This post is my take on displaying real-time views using Firebase and React. This has previously been done by Guillermo Rauch on [rauchg.com](https://rauchg.com) and Lee Robinson on [leerob.io](https://leerob.io).
+This post is my take on displaying real-time post views using Firebase and React. This has previously been done by Guillermo Rauch on [rauchg.com](https://rauchg.com) and Lee Robinson on [leerob.io](https://leerob.io).
 Lee also explains how he did this in his [blog](https://leerob.io/blog/real-time-post-views).
 
 So why should you read _my_ post if they have already done so and even explained it? The reason being, both implementations require some sort of node environment to execute code while my post shows how you can achieve it on the _client-side_.
