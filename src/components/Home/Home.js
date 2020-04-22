@@ -21,8 +21,8 @@ const Home = () => {
           <b>React</b> and <b>Nodejs</b> developer.
         </p>
         <p>
-          Passionate graphics designer and animator who is also interested in 3D
-          stuff.
+          Passionate graphics designer and animator who is also interested in
+          everything 3D.
         </p>
         <div>
           <IconContext.Provider value={{ size: '2em', color: '#3a3a3a' }}>
