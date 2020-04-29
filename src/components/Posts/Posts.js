@@ -38,7 +38,7 @@ const Posts = () => {
           const parsedDate = date.toUTCString().slice(0, 16);
 
           return (
-            <div className={styles.post}>
+            <div className={styles.post} key={edge.node.fields.slug}>
               <Link to={`/posts/${edge.node.fields.slug}`}>
                 <h2>{edge.node.frontmatter.title}</h2>
               </Link>

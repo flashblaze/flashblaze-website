@@ -14,19 +14,11 @@ const ViewCounter = ({ id }) => {
 
     incrementViews(id);
 
-    firebase
-      .database()
-      .ref(`/views`)
-      .child(id)
-      .on(`value`, onViews);
+    firebase.database().ref(`/views`).child(id).on(`value`, onViews);
 
     return () => {
       if (firebase.database()) {
-        firebase
-          .database()
-          .ref(`/views`)
-          .child(id)
-          .off(`value`, onViews);
+        firebase.database().ref(`/views`).child(id).off(`value`, onViews);
       }
     };
   }, [id]);

@@ -42,7 +42,9 @@ const Post = (props) => {
           <hr />
         </div>
         <div
-          dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }}
+          dangerouslySetInnerHTML={{
+            __html: props.data.markdownRemark.html,
+          }}
         ></div>
       </div>
     </Layout>
