@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { graphql } from 'gatsby';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import Layout from '../components/Layout/Layout';
 import styles from './styles.module.scss';
@@ -8,12 +9,12 @@ import Head from '../components/Head';
 
 export const query = graphql`
   query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    mdx(fields: { slug: { eq: $slug } }) {
       frontmatter {
         title
         date
       }
-      html
+      body
     }
   }
 `;
@@ -25,15 +26,15 @@ const Post = (props) => {
     setPostSlug(props.path.split('/')[2]);
   }, [props.path]);
 
-  const date = new Date(props.data.markdownRemark.frontmatter.date);
+  const date = new Date(props.data.mdx.frontmatter.date);
   const parsedDate = date.toUTCString().slice(0, 16);
 
   return (
     <Layout>
       <div className={styles.container}>
-        <Head title={props.data.markdownRemark.frontmatter.title} />
+        <Head title={props.data.mdx.frontmatter.title} />
         <div className={styles.metadata}>
-          <h1>{props.data.markdownRemark.frontmatter.title}</h1>
+          <h1>{props.data.mdx.frontmatter.title}</h1>
           <div className={styles.dateViews}>
             <p>{parsedDate}</p>
             {postSlug ? <ViewCounter id={postSlug} /> : null}
@@ -41,11 +42,7 @@ const Post = (props) => {
 
           <hr />
         </div>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: props.data.markdownRemark.html,
-          }}
-        ></div>
+        <MDXRenderer>{props.data.mdx.body}</MDXRenderer>
       </div>
     </Layout>
   );

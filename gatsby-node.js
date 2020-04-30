@@ -3,8 +3,11 @@ const path = require('path');
 exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions;
 
-  if (node.internal.type === 'MarkdownRemark') {
-    const fileName = path.basename(node.fileAbsolutePath, '.md');
+  if (node.internal.type === 'Mdx') {
+    const fileName = path.basename(
+      node.fileAbsolutePath,
+      path.extname(node.fileAbsolutePath)
+    );
     let slug = '';
     if (fileName.startsWith('draft')) {
       slug = fileName;
@@ -25,7 +28,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const blogTemplate = path.resolve('./src/templates/Post.js');
   const res = await graphql(`
     query {
-      allMarkdownRemark {
+      allMdx(sort: { fields: [frontmatter___date], order: DESC }, limit: 1000) {
         edges {
           node {
             fields {
@@ -36,7 +39,7 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `);
-  res.data.allMarkdownRemark.edges.forEach((edge) => {
+  res.data.allMdx.edges.forEach((edge) => {
     createPage({
       component: blogTemplate,
       path: `/posts/${edge.node.fields.slug}`,

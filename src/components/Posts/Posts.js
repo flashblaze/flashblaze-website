@@ -6,7 +6,7 @@ import styles from './styles.module.scss';
 const Posts = () => {
   const data = useStaticQuery(graphql`
     query {
-      allMarkdownRemark {
+      allMdx {
         edges {
           node {
             frontmatter {
@@ -22,7 +22,7 @@ const Posts = () => {
     }
   `);
 
-  const newEdges = data.allMarkdownRemark.edges.reduce((filtered, edge) => {
+  const newEdges = data.allMdx.edges.reduce((filtered, edge) => {
     if (!edge.node.fields.slug.startsWith('draft')) {
       filtered.push(edge);
     }
