@@ -1,3 +1,4 @@
+const emoji = require(`remark-emoji`);
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
@@ -66,6 +67,7 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [`.mdx`, `.md`],
+        remarkPlugins: [emoji],
         gatsbyRemarkPlugins: [
           `gatsby-remark-relative-images`,
           {
@@ -75,7 +77,6 @@ module.exports = {
               linkImagesToOriginal: false,
             },
           },
-          `gatsby-remark-emoji`,
           {
             resolve: `gatsby-remark-prismjs`,
           },
