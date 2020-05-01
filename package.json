@@ -7,7 +7,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "env-cmd -f .env gatsby develop -H 0.0.0.0",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "format": "prettier --write \"**/*.{js,jsx,json,md,mdx}\"",
     "lint": "npm run format && eslint --fix . && echo 'Lint complete.'",
     "start": "npm run develop",
     "serve": "gatsby serve",
