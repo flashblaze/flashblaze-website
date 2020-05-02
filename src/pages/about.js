@@ -7,7 +7,7 @@ import About from '../components/About/About';
 const Index = () => {
   return (
     <Layout>
-      <SEO title="About" description="Some information about me" />
+      <SEO title="About" description="Some information about me" slug="about" />
       <About />
     </Layout>
   );

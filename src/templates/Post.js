@@ -36,6 +36,7 @@ const Post = (props) => {
         <SEO
           title={props.data.mdx.frontmatter.title}
           description={props.data.mdx.frontmatter.description}
+          slug={postSlug}
         />
         <div className={styles.metadata}>
           <h1>{props.data.mdx.frontmatter.title}</h1>

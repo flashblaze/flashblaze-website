@@ -10,6 +10,7 @@ const Index = () => {
       <SEO
         title="Neeraj Lagwankar"
         description="Personal Website of Neeraj Lagwankar"
+        slug=""
       />
       <Home />
     </Layout>

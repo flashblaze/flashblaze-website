@@ -7,7 +7,7 @@ import Posts from '../components/Posts/Posts';
 const Index = () => {
   return (
     <Layout>
-      <SEO title="Posts" description="My writings" />
+      <SEO title="Posts" description="My writings" slug="posts" />
       <Posts />
     </Layout>
   );
