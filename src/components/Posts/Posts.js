@@ -6,7 +6,7 @@ import styles from './styles.module.scss';
 const Posts = () => {
   const data = useStaticQuery(graphql`
     query {
-      allMdx {
+      allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
         edges {
           node {
             frontmatter {
