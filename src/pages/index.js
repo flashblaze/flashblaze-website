@@ -1,13 +1,16 @@
 import React from 'react';
 
 import Layout from '../components/Layout/Layout';
-import Head from '../components/Head';
+import SEO from '../components/SEO';
 import Home from '../components/Home/Home';
 
 const Index = () => {
   return (
     <Layout>
-      <Head title="Neeraj Lagwankar" />
+      <SEO
+        title="Neeraj Lagwankar"
+        description="Personal Website of Neeraj Lagwankar"
+      />
       <Home />
     </Layout>
   );

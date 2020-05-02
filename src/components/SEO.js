@@ -8,10 +8,7 @@ const Head = (props) => {
         <title>{props.title}</title>
         <meta charSet="UTF-8" />
         <meta name="author" content="Neeraj Lagwankar" />
-        <meta
-          name="description"
-          content="Personal Website of Neeraj Lagwankar"
-        />
+        <meta name="description" content={props.description} />
         <html lang="en" amp />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta

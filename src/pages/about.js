@@ -1,13 +1,13 @@
 import React from 'react';
 
 import Layout from '../components/Layout/Layout';
-import Head from '../components/Head';
+import SEO from '../components/SEO';
 import About from '../components/About/About';
 
 const Index = () => {
   return (
     <Layout>
-      <Head title="About" />
+      <SEO title="About" description="Some information about me" />
       <About />
     </Layout>
   );

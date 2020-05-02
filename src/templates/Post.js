@@ -5,13 +5,14 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Layout from '../components/Layout/Layout';
 import styles from './styles.module.scss';
 import ViewCounter from '../components/ViewCounter';
-import Head from '../components/Head';
+import SEO from '../components/SEO';
 
 export const query = graphql`
   query($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
       frontmatter {
         title
+        description
         date
       }
       body
@@ -32,7 +33,10 @@ const Post = (props) => {
   return (
     <Layout>
       <div className={styles.container}>
-        <Head title={props.data.mdx.frontmatter.title} />
+        <SEO
+          title={props.data.mdx.frontmatter.title}
+          description={props.data.mdx.frontmatter.description}
+        />
         <div className={styles.metadata}>
           <h1>{props.data.mdx.frontmatter.title}</h1>
           <div className={styles.dateViews}>
