@@ -29,7 +29,7 @@ const Header = () => {
         <Link to="/posts" sx={{ color: 'text', mr: 4 }}>
           <p>Posts</p>
         </Link>
-        <Link to="/about" sx={{ color: 'text' }}>
+        <Link to="/about" sx={{ color: 'text', mr: 4 }}>
           <p>About</p>
         </Link>
       </div>

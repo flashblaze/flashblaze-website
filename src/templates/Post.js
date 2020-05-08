@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
-import Layout from '../components/Layout/Layout';
+import Layout from '../components/Layout';
 import styles from './styles.module.scss';
 import ViewCounter from '../components/ViewCounter';
 import SEO from '../components/SEO';
