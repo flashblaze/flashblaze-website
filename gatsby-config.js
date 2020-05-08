@@ -9,6 +9,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-theme-ui`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {
