@@ -13,6 +13,17 @@ const Home = () => {
         p: '3',
         mt: 8,
       }}
+      css={`
+        @media (max-width: 360px) {
+          flex-direction: column;
+          width: 320px;
+        }
+
+        @media (max-width: 720px) {
+          flex-direction: column;
+          width: 340px;
+        }
+      `}
     >
       <div
         sx={{

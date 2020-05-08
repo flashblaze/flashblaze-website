@@ -30,7 +30,7 @@ const MyObject = () => {
 
   // useFrame(() => (ref.current.rotation.y += 0.008));
   return (
-    <mesh rotation={[0, 0, 0]} position={[0, 1.5, 0]}>
+    <mesh rotation={[0, 0, 0]} position={[0, 1, 0]} scale={[1.5, 1.5, 1.5]}>
       <coneBufferGeometry attach="geometry" args={[1.5, 2.5]} />
       <meshBasicMaterial
         attach="material"
