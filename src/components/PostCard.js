@@ -41,12 +41,13 @@ const PostCard = () => {
           max-width: 450px;
           height: 150px;
           background: #308fff;
-          transition: box-shadow 0.3s ease-in-out;
+          box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
+          transition: box-shadow 0.2s ease 0s;
           border-radius: 20px;
           padding: 20px;
           color: #ffffff;
           &:hover {
-            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.25);
+            box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.35);
           }
         `}
       >
