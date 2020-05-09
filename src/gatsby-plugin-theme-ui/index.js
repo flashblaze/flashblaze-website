@@ -25,6 +25,13 @@ export default {
         color: '#0059c1',
       },
     },
+    title: {
+      color: 'primary',
+      textDecoration: 'none',
+      '&:hover': {
+        color: '#0059c1',
+      },
+    },
   },
   sizes: {
     container: 720,

@@ -1,6 +1,7 @@
 /**@jsx jsx */
-import { Link, jsx } from 'theme-ui';
+import { jsx } from 'theme-ui';
 import { graphql, useStaticQuery } from 'gatsby';
+import { Link } from 'gatsby';
 
 const Posts = () => {
   const data = useStaticQuery(graphql`
@@ -56,7 +57,10 @@ const Posts = () => {
               sx={{ mb: 7, lineHeight: 0, fontSize: 2 }}
               key={edge.node.fields.slug}
             >
-              <Link href={`/posts/${edge.node.fields.slug}`}>
+              <Link
+                to={`/posts/${edge.node.fields.slug}`}
+                sx={{ variant: 'text.title' }}
+              >
                 <h2>{edge.node.frontmatter.title}</h2>
               </Link>
               <p>{parsedDate}</p>
