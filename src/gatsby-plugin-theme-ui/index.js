@@ -17,4 +17,13 @@ export default {
   sizes: {
     container: 720,
   },
+  styles: {
+    a: {
+      color: 'primary',
+      textDecoration: 'none',
+      '&:hover': {
+        color: '#0059c1',
+      },
+    },
+  },
 };

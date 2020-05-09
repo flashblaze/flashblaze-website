@@ -1,6 +1,5 @@
-import React from 'react';
-
-import aboutStyles from './styles.module.scss';
+/**@jsx jsx */
+import { Link, jsx } from 'theme-ui';
 
 const About = () => {
   // Month starts from 0
@@ -9,60 +8,80 @@ const About = () => {
   const age = Math.abs(ageDiff.getUTCFullYear() - 1970);
 
   return (
-    <div className={aboutStyles.container}>
-      <div className={aboutStyles.about}>
+    <div
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        maxWidth: 'container',
+        p: 3,
+        mt: 8,
+      }}
+      css={`
+        @media (max-width: 360px) {
+          width: 320px;
+          margin-top: 50px;
+          padding: 20px;
+        }
+
+        @media (max-width: 720px) {
+          width: 340px;
+          margin-top: 50px;
+        }
+      `}
+    >
+      <div>
         <h2>About me</h2>
         <div>
           <p>
             I'm a {age} year old front-end developer who likes to work with{' '}
             <b>React</b> and <b>Nodejs</b>. I like building minimalist UIs and
             everything I have done can be found on{' '}
-            <a
+            <Link
               href="https://github.com/FlashBlaze"
               rel="noopener noreferrer"
               target="_blank"
               aria-label="GitHub"
             >
               GitHub
-            </a>
+            </Link>
             . <br />I also like to develop some simple scripts using{' '}
             <b>Python</b> such as{' '}
-            <a
+            <Link
               href="https://github.com/FlashBlaze/yts-downloader"
               rel="noopener noreferrer"
               target="_blank"
               aria-label="yts-downloader link"
             >
               yts-downloader
-            </a>{' '}
+            </Link>{' '}
             and{' '}
-            <a
+            <Link
               href="https://github.com/FlashBlaze/reddit-bots"
               rel="noopener noreferrer"
               target="_blank"
               aria-label="reddit-bots link"
             >
               reddit-bots
-            </a>
+            </Link>
             . Recently I'm also getting into minor app development using{' '}
             <b>Flutter</b>. You can find the app <i>Hacker News Reader</i> on{' '}
-            <a
+            <Link
               href="https://play.google.com/store/apps/details?id=com.flashblaze.ycnews"
               rel="noopener noreferrer"
               target="_blank"
               aria-label="Hacker News Reader link"
             >
               Play Store
-            </a>{' '}
+            </Link>{' '}
             and the source code on{' '}
-            <a
+            <Link
               href="https://github.com/FlashBlaze/ycnews"
               rel="noopener noreferrer"
               target="_blank"
               aria-label="GitHub Hacker News Reader link"
             >
               GitHub
-            </a>
+            </Link>
           </p>
           <p>
             I also love working with After Effects, Photoshop, Gimp and Blender.
@@ -70,75 +89,75 @@ const About = () => {
         </div>
       </div>
 
-      <div className={aboutStyles.contactMe}>
+      <div sx={{ mt: 7 }}>
         <h2>Contact me</h2>
         <p>
           Get in touch:{' '}
-          <a href="mailto:neerajlagwankar@gmail.com">
+          <Link href="mailto:neerajlagwankar@gmail.com">
             <i>neerajlagwankar@gmail.com</i>
-          </a>
+          </Link>
         </p>
         <p>Find me here:</p>
         <ul>
           <li>
-            <a
+            <Link
               href="https://github.com/FlashBlaze"
               rel="noopener noreferrer"
               target="_blank"
               aria-label="GitHub link"
             >
               GitHub
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
               href="https://play.google.com/store/apps/developer?id=Neeraj+Lagwankar"
               rel="noopener noreferrer"
               target="_blank"
               aria-label="Play Store link"
             >
               Play Store
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
               href="https://www.linkedin.com/in/neeraj-lagwankar/"
               rel="noopener noreferrer"
               target="_blank"
               aria-label="LinkedIn link"
             >
               LinkedIn
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
               href="https://instagram.com/neeraj_artx"
               rel="noopener noreferrer"
               target="_blank"
               aria-label="Instagram link"
             >
               Instagram
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
               href="https://twitter.com/neeraj_artx"
               rel="noopener noreferrer"
               target="_blank"
               aria-label="Twitter link"
             >
               Twitter
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
               href="https://t.me/flashblaze"
               rel="noopener noreferrer"
               target="_blank"
               aria-label="Telegram link"
             >
               Telegram
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
