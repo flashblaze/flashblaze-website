@@ -25,12 +25,13 @@ const Home = () => {
           flexDirection: 'row',
           maxWidth: '720px',
           p: '3',
-          mt: 8,
+          mt: '8',
         }}
         css={`
           @media (max-width: 360px) {
             flex-direction: column;
             width: 320px;
+            margin-top: 64px;
           }
 
           @media (max-width: 720px) {
