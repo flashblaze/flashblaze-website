@@ -6,12 +6,24 @@ export default {
     text: '#333333',
     background: '#ffffff',
     primary: '#308fff',
+    '&:hover': {
+      text: '#0059c1',
+    },
+    modes: {
+      dark: {
+        text: '#ffffff',
+        background: '#1d1d1d',
+        primary: '#308fff',
+      },
+    },
   },
-  modes: {
-    dark: {
-      text: '#ffffff',
-      background: '#1d1d1d',
-      primary: '#308fff',
+  text: {
+    heading: {
+      color: 'text',
+      textDecoration: 'none',
+      '&:hover': {
+        color: '#0059c1',
+      },
     },
   },
   sizes: {

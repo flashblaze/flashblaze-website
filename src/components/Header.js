@@ -1,10 +1,12 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { FiMoon } from 'react-icons/fi';
+import { jsx, useColorMode } from 'theme-ui';
+import { FiMoon, FiSun } from 'react-icons/fi';
 import { IconContext } from 'react-icons';
 import { Link } from 'gatsby';
 
 const Header = () => {
+  const [colorMode, setColorMode] = useColorMode();
+
   return (
     <header
       sx={{
@@ -20,16 +22,28 @@ const Header = () => {
       <IconContext.Provider
         value={{ style: { strokeWidth: '1', height: '2em', width: '2em' } }}
       >
-        <FiMoon />
+        {colorMode === 'default' ? (
+          <FiMoon
+            onClick={() => {
+              setColorMode(colorMode === 'default' ? 'dark' : 'default');
+            }}
+          />
+        ) : (
+          <FiSun
+            onClick={() => {
+              setColorMode(colorMode === 'default' ? 'dark' : 'default');
+            }}
+          />
+        )}
       </IconContext.Provider>
       <div sx={{ display: 'flex', flexDirection: 'row' }}>
-        <Link to="/" sx={{ color: 'text', mr: 4 }}>
+        <Link to="/" sx={{ variant: 'text.heading', mr: 4 }}>
           <p>Home</p>
         </Link>
-        <Link to="/posts" sx={{ color: 'text', mr: 4 }}>
+        <Link to="/posts" sx={{ variant: 'text.heading', mr: 4 }}>
           <p>Posts</p>
         </Link>
-        <Link to="/about" sx={{ color: 'text', mr: 4 }}>
+        <Link to="/about" sx={{ variant: 'text.heading', mr: 4 }}>
           <p>About</p>
         </Link>
       </div>
