@@ -1,10 +1,22 @@
 /**@jsx jsx */
-import { jsx } from 'theme-ui';
+import { jsx, useColorMode } from 'theme-ui';
+import { useEffect, useState } from 'react';
 
 import Model from './Model/Model';
 import PostCard from './PostCard';
 
 const Home = () => {
+  const [meshColor, setMeshColor] = useState('#333333');
+
+  const [colorMode] = useColorMode();
+  useEffect(() => {
+    if (colorMode === 'default') {
+      setMeshColor('#333333');
+    } else {
+      setMeshColor('#ffffff');
+    }
+  }, [colorMode, meshColor]);
+
   return (
     <div>
       <div
@@ -45,7 +57,7 @@ const Home = () => {
           </p>
         </div>
         <div>
-          <Model />
+          <Model meshColor={meshColor} />
         </div>
       </div>
       <div sx={{ p: 5 }}>

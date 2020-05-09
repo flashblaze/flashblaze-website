@@ -1,4 +1,6 @@
-import React, { useRef } from 'react';
+/**@jsx jsx */
+import { jsx } from 'theme-ui';
+import { useRef } from 'react';
 import { Canvas, extend, useThree, useFrame } from 'react-three-fiber';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
@@ -25,16 +27,13 @@ const Controls = () => {
   );
 };
 
-const MyObject = () => {
-  // const ref = useRef();
-
-  // useFrame(() => (ref.current.rotation.y += 0.008));
+const MyObject = ({ meshColor }) => {
   return (
     <mesh rotation={[0, 0, 0]} position={[0, 1, 0]} scale={[1.5, 1.5, 1.5]}>
       <coneBufferGeometry attach="geometry" args={[1.5, 2.5]} />
       <meshBasicMaterial
         attach="material"
-        color="#3a3a3a"
+        color={meshColor}
         roughness={0.5}
         metalness={0.5}
         wireframe={true}
@@ -44,19 +43,20 @@ const MyObject = () => {
   );
 };
 
-const Model = () => {
+const Model = ({ meshColor }) => {
+  console.log(meshColor);
   if (typeof window === 'undefined') {
     return (
       <Canvas pixelRatio={3}>
         <Controls />
-        <MyObject />
+        <MyObject meshColor={meshColor} />
       </Canvas>
     );
   } else {
     return (
       <Canvas pixelRatio={window.devicePixelRatio | 1}>
         <Controls />
-        <MyObject />
+        <MyObject meshColor={meshColor} />
       </Canvas>
     );
   }
