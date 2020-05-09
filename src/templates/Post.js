@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+/**@jsx jsx */
+import { jsx } from 'theme-ui';
+import { useEffect, useState } from 'react';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import Layout from '../components/Layout';
-import styles from './styles.module.scss';
 import ViewCounter from '../components/ViewCounter';
 import SEO from '../components/SEO';
 
@@ -32,15 +33,33 @@ const Post = (props) => {
 
   return (
     <Layout>
-      <div className={styles.container}>
+      <div
+        css={`
+          display: 'flex';
+          max-width: 720px;
+          width: 720px;
+          padding: 10px;
+          margin-top: 125px;
+          @media (max-width: 360px) {
+            width: 320px;
+            margin-top: 50px;
+            padding: 20px;
+          }
+
+          @media (max-width: 720px) {
+            width: 340px;
+            margin-top: 50px;
+          }
+        `}
+      >
         <SEO
           title={props.data.mdx.frontmatter.title}
           description={props.data.mdx.frontmatter.description}
           slug={'posts/' + postSlug}
         />
-        <div className={styles.metadata}>
+        <div sx={{ mb: 7 }}>
           <h1>{props.data.mdx.frontmatter.title}</h1>
-          <div className={styles.dateViews}>
+          <div sx={{ display: 'flex', justifyContent: 'space-between' }}>
             <p>{parsedDate}</p>
             {postSlug ? <ViewCounter id={postSlug} /> : null}
           </div>

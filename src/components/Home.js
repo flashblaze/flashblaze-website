@@ -49,7 +49,7 @@ const Home = () => {
         </div>
       </div>
       <div sx={{ p: 5 }}>
-        <h3>Latest Post</h3>
+        <h3 sx={{ p: 1 }}>Latest Post</h3>
         <PostCard />
       </div>
     </div>

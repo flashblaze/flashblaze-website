@@ -152,7 +152,12 @@ MEASUREMENT_ID='your_values_here'
 ```
 
 5. Install [env-cmd](https://npmjs.org/package/env-cmd) as a dev dependency to use the environment variables by typing `npm i -D env-cmd`
-6. Modify "develop" command in `package.json` to `env-cmd -f .env gatsby develop`
+6. Modify "develop" command in `package.json` to
+
+```
+env-cmd -f .env gatsby develop
+```
+
 7. Add the below code to `gatsby-config.js`
 
 ```js

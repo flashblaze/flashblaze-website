@@ -22,7 +22,7 @@ export default {
       color: 'text',
       textDecoration: 'none',
       '&:hover': {
-        color: '#0059c1',
+        color: '#308fff',
       },
     },
     title: {
