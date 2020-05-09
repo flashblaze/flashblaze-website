@@ -1,7 +1,6 @@
-import React from 'react';
-import { Link, graphql, useStaticQuery } from 'gatsby';
-
-import styles from './styles.module.scss';
+/**@jsx jsx */
+import { Link, jsx } from 'theme-ui';
+import { graphql, useStaticQuery } from 'gatsby';
 
 const Posts = () => {
   const data = useStaticQuery(graphql`
@@ -30,16 +29,34 @@ const Posts = () => {
   }, []);
 
   return (
-    <div className={styles.container}>
-      {/* <h1 className={styles.pageHeading}>Posts</h1> */}
-      <div className={styles.posts}>
+    <div
+      css={`
+        display: flex;
+        max-width: 720px;
+        padding: 10px;
+        margin-top: 125px;
+        @media (max-width: 360px) {
+          width: 320px;
+          margin-top: 50px;
+          padding: 20px;
+        }
+        @media (max-width: 720px) {
+          width: 360px;
+          margin-top: 50px;
+        }
+      `}
+    >
+      <div>
         {newEdges.map((edge) => {
           const date = new Date(edge.node.frontmatter.date);
           const parsedDate = date.toUTCString().slice(0, 16);
 
           return (
-            <div className={styles.post} key={edge.node.fields.slug}>
-              <Link to={`/posts/${edge.node.fields.slug}`}>
+            <div
+              sx={{ mb: 7, lineHeight: 0, fontSize: 2 }}
+              key={edge.node.fields.slug}
+            >
+              <Link href={`/posts/${edge.node.fields.slug}`}>
                 <h2>{edge.node.frontmatter.title}</h2>
               </Link>
               <p>{parsedDate}</p>

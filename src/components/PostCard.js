@@ -1,6 +1,6 @@
 /**@jsx jsx  */
-import { jsx } from 'theme-ui';
-import { Link, graphql, useStaticQuery } from 'gatsby';
+import { Link, jsx } from 'theme-ui';
+import { graphql, useStaticQuery } from 'gatsby';
 
 const PostCard = () => {
   const data = useStaticQuery(graphql`
@@ -35,7 +35,7 @@ const PostCard = () => {
   const title = latestPost.node.frontmatter.title;
 
   return (
-    <Link to={`/posts/${latestPost.node.fields.slug}`}>
+    <Link href={`/posts/${latestPost.node.fields.slug}`}>
       <div
         css={`
           max-width: 450px;
