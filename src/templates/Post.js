@@ -34,23 +34,13 @@ const Post = (props) => {
   return (
     <Layout>
       <div
-        css={`
-          display: 'flex';
-          max-width: 720px;
-          width: 720px;
-          padding: 10px;
-          margin-top: 125px;
-          @media (max-width: 360px) {
-            width: 320px;
-            margin-top: 50px;
-            padding: 20px;
-          }
-
-          @media (max-width: 720px) {
-            width: 340px;
-            margin-top: 50px;
-          }
-        `}
+        sx={{
+          display: 'flex',
+          maxWidth: ['container', 'container', 'container'],
+          flexDirection: 'column',
+          p: [3, 3, 3],
+          mt: [7, 7, 9],
+        }}
       >
         <SEO
           title={props.data.mdx.frontmatter.title}

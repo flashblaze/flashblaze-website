@@ -12,22 +12,10 @@ const About = () => {
       sx={{
         display: 'flex',
         flexDirection: 'column',
-        maxWidth: 'container',
-        p: 3,
-        mt: 8,
+        maxWidth: ['container', 'container', 'container'],
+        p: [5, 5, 3],
+        mt: [7, 7, 8],
       }}
-      css={`
-        @media (max-width: 360px) {
-          width: 320px;
-          margin-top: 50px;
-          padding: 20px;
-        }
-
-        @media (max-width: 720px) {
-          width: 340px;
-          margin-top: 50px;
-        }
-      `}
     >
       <div>
         <h2>About me</h2>
