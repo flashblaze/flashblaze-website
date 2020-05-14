@@ -28,7 +28,6 @@ const PostCard = () => {
     return filtered;
   }, []);
 
-  console.log(newEdges);
   const latestPost = newEdges[0];
   const date = new Date(latestPost.node.frontmatter.date);
   const parsedDate = date.toUTCString().slice(0, 16);

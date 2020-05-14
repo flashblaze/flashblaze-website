@@ -2,7 +2,7 @@
 import { jsx, useColorMode } from 'theme-ui';
 import { useEffect, useState } from 'react';
 
-import Model from './Model/Model';
+import Model from './Model';
 import PostCard from './PostCard';
 
 const Home = () => {
@@ -49,7 +49,12 @@ const Home = () => {
           <Model meshColor={meshColor} />
         </div>
       </div>
-      <div sx={{ p: 5 }}>
+      <div
+        sx={{
+          p: 5,
+          maxWidth: ['470px', '470px', '470px'],
+        }}
+      >
         <h3 sx={{ p: 1 }}>Latest Post</h3>
         <PostCard />
       </div>

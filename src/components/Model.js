@@ -44,7 +44,6 @@ const MyObject = ({ meshColor }) => {
 };
 
 const Model = ({ meshColor }) => {
-  console.log(meshColor);
   if (typeof window === 'undefined') {
     return (
       <Canvas pixelRatio={3}>
