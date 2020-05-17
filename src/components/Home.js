@@ -45,7 +45,7 @@ const Home = () => {
             3D.
           </p>
         </div>
-        <div>
+        <div css={{ canvas: { outline: 'none' } }}>
           <Model meshColor={meshColor} />
         </div>
       </div>
