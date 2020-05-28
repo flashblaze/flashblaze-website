@@ -22,12 +22,9 @@ const Posts = () => {
     }
   `);
 
-  const newEdges = data.allMdx.edges.reduce((filtered, edge) => {
-    if (!edge.node.fields.slug.startsWith('draft')) {
-      filtered.push(edge);
-    }
-    return filtered;
-  }, []);
+  const newEdges = data.allMdx.edges.filter(
+    (edge) => !edge.node.fields.slug.startsWith('draft')
+  );
 
   return (
     <div

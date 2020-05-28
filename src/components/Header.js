@@ -28,7 +28,9 @@ const Header = () => {
             title="Activate Dark Mode"
             sx={{
               fill: 'text',
-              ':hover': { cursor: 'pointer' },
+              ':hover': { cursor: 'pointer', opacity: 1 },
+              transition: 'opacity 0.3s ease',
+              opacity: 0.7,
             }}
             onClick={() => {
               setColorMode(colorMode === 'default' ? 'dark' : 'default');
@@ -40,7 +42,9 @@ const Header = () => {
             title="Activate Light Mode"
             sx={{
               fill: 'text',
-              ':hover': { cursor: 'pointer' },
+              ':hover': { cursor: 'pointer', opacity: 1 },
+              transition: 'opacity 0.3s ease',
+              opacity: 0.7,
             }}
             onClick={() => {
               setColorMode(colorMode === 'default' ? 'dark' : 'default');
