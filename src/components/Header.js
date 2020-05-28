@@ -24,12 +24,24 @@ const Header = () => {
       >
         {colorMode === 'default' ? (
           <FiMoon
+            aria-label="Activate Dark Mode"
+            title="Activate Dark Mode"
+            sx={{
+              fill: 'text',
+              ':hover': { cursor: 'pointer' },
+            }}
             onClick={() => {
               setColorMode(colorMode === 'default' ? 'dark' : 'default');
             }}
           />
         ) : (
           <FiSun
+            aria-label="Activate Light Mode"
+            title="Activate Light Mode"
+            sx={{
+              fill: 'text',
+              ':hover': { cursor: 'pointer' },
+            }}
             onClick={() => {
               setColorMode(colorMode === 'default' ? 'dark' : 'default');
             }}
