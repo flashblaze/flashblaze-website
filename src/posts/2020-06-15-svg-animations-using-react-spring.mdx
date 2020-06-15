@@ -1,15 +1,19 @@
 ---
-title: 'SVG animations in React using react-spring'
+title: 'SVG Animations in React Using react-spring'
 description: 'Post on how to animate svg in React using react-spring'
 date: '2020-06-15'
 ---
 
+import ReactPlayer from 'react-player';
+import BasicAnim from './assets/svg-animations-react-spring/4_circle_basic_animation.mp4';
+import AdvancedAnim from './assets/svg-animations-react-spring/5_circle_advanced_animation.mp4';
+
 # Introduction
 
-Animations are an important part of a website, and when implemented correctly deliver a good user experience.
-Although there exists some animation libraries which work with React, we are going to take a look at [react-spring](https://www.react-spring.io/) a great animation library which is based on physics (yes you read that right) instead of durations.
+Animations are an important part of a website, and when implemented correctly, they deliver a good user experience.
+Although there are some animation libraries which work with React, we are going to take a look at [react-spring](https://www.react-spring.io/) a great animation library which is based on physics (yes you read that right) instead of durations.
 
-The need for this post arose when I tried to animate an svg using _react-spring_ but I could not find a good resource from start to finish. Although _react-spring_ documents on [animating an svg](https://www.react-spring.io/docs/props/spring) implementing it as is, will not work as a number of parameters required such as svg path length, stroke dash array, etc are not mentioned.
+The need for this post arose when I tried to animate an svg using _react-spring_ but I could not find a good resource from start to finish. Although _react-spring_ documents on [animating an svg](https://www.react-spring.io/docs/props/spring), implementing it as is will not work as a number of parameters required such as svg path length, stroke dash array, etc are not mentioned.
 
 So, let us begin!
 
@@ -32,6 +36,8 @@ npm run start
 in terminal to start the React app.
 
 Go to `http://localhost:3000` to view the running app.
+
+![Default React app](./assets/svg-animations-react-spring/1_default_react_app.png)
 
 Go to `src` directory and create a new file `Animation.js` which will contain the animation code.
 
@@ -68,6 +74,8 @@ const Animation = () => {
 export default Animation;
 ```
 
+![Hello World!](./assets/svg-animations-react-spring/2_hello_world.png)
+
 # Animation
 
 Replace the code in `Animation.js` by the following code
@@ -103,11 +111,15 @@ const Animation = () => {
 export default Animation;
 ```
 
-To animate an svg, you need the path length of it. [css-tricks](https://css-tricks.com/svg-line-animation-works/) explains this on how to achieve this using HTML, CSS and vanilla JavaScript which I translated to React.
+![SVG Circle](./assets/svg-animations-react-spring/3_svg_circle.png)
+
+To animate an svg, you need the path length of it. [css-tricks](https://css-tricks.com/svg-line-animation-works/) explains on how to achieve this using HTML, CSS and vanilla JavaScript which I translated to React.
 
 To get the path length, you'll need a reference to the path which is achieved through `useRef` hook which is used to reference the DOM or React element. `getTotalLength()` gives us the total length.
 
 `useEffect` hook is used to get the length of the svg path as soon as the component is mounted.
+
+You can either note down the length from browser console and then use it in `useState` **or** you can render an invisible svg temporarily and render the final svg on setting the `offset` value. I'm going to follow second method as I won't have to constantly check `console.log()` whenever I change the svg.
 
 ## Move the shape already!
 
@@ -168,6 +180,8 @@ const Animation = () => {
 export default Animation;
 ```
 
+<ReactPlayer url={BasicAnim} controls={true} />
+
 To create the animation of circle being completed from length 0 to full length, we need its length which is stored in offset.
 
 Initially, when the component is loaded the `offset` value is null. To get the length, we need the svg. As we do not need to display it, fill is set to none. As soon as `offset` value is set, we display the svg and animate it.
@@ -176,7 +190,7 @@ Initially, when the component is loaded the `offset` value is null. To get the l
 
 `strokeDashoffset` sets the offset value which moves the position of the dashes. Now we animate it from its `offset` value to 0 so it looks like the circle is being drawn.
 
-You can also configure various parameters like _friction_, _tension_, _precision_, etc. The complete list can be found [here](https://www.react-spring.io/docs/props/spring)
+You can also configure various parameters like `friction`, `tension`, `precision`, etc. The complete list can be found [here](https://www.react-spring.io/docs/props/spring)
 
 This is the modified code which shows what changing some values does
 
@@ -237,8 +251,10 @@ const Animation = () => {
 export default Animation;
 ```
 
+<ReactPlayer url={AdvancedAnim} controls={true} />
+
 # Conclusion
 
-[react-spring](https://www.react-spring.io/) is an amazing animation library which is based on physics and gives amazing results based on actual physical properties. I have barely scratched the surface and you can similarly animate opacity, change colours, etc. and have a blast with it.
+[react-spring](https://www.react-spring.io/) is an amazing animation library which is based on physics and gives amazing results based on actual physical properties. You can similarly animate opacity, change colours, etc. and have a blast with it.
 
 ### You can view the complete project on [GitHub](https://github.com/FlashBlaze/react-spring-animation-demo)
