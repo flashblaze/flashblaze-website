@@ -1,0 +1,100 @@
+---
+title: 'WIP'
+description: 'WIP'
+date: '2020-06-15'
+---
+
+# Introduction
+
+Animations are an important part of a website, and when implemented correctly deliver a good user experience.
+Although there exists some animation libraries which work with React, we are going to take a look at [react-spring](https://www.react-spring.io/) a great animation library which is based on physics (yes you read that right) instead of durations.
+
+The need for this post arose when I tried to animate an svg using _react-spring_ but I could not find a good resource from start to finish. Although _react-spring_ documents on [animating an svg](https://www.react-spring.io/docs/props/spring) implementing it as is, will not work as a number of parameters required such as svg path length, stroke dash array, etc are not mentioned.
+
+So, let us begin!
+
+# Setup
+
+1. Begin by typing
+
+```
+npx create-react-app react-spring-demo
+```
+
+in your terminal. Go inside the created project and install react-spring by typing `npm install --save react-spring`
+
+2. Type
+
+```
+npm run start
+```
+
+in terminal to start the React app. Go to `src` directory and create a new file `Animation.js` which will contain the animation code.
+
+3. Remove everything from `App.js` and import `Animation.js`. Inside `Animation.js` type a simple hello world program as a placeholder.
+
+Below is `App.js`
+
+```js
+// App.js
+import React from 'react';
+import Animation from './Animation';
+
+const App = () => {
+  return (
+    <div>
+      <Animation />
+    </div>
+  );
+};
+
+export default App;
+```
+
+Below is `Animation.js`
+
+```js
+//Animation.js
+import React from 'react';
+
+const Animation = () => {
+  return <h1>Hello World!</h1>;
+};
+
+export default Animation;
+```
+
+# Animation
+
+1. Replace the code in `Animation.js` by the following code
+
+```js
+// Animation.js
+import React, { useEffect, useRef } from 'react';
+
+const Animation = () => {
+  const pathRef = useRef();
+
+  useEffect(() => {
+    console.log(pathRef.current.getTotalLength());
+  }, []);
+
+  return (
+    <div>
+      <svg>
+        <circle
+          strokeWidth="3"
+          cx="100"
+          cy="50"
+          r="40"
+          stroke="black"
+          fill="none"
+          ref={pathRef}
+        />
+      </svg>
+    </div>
+  );
+};
+
+export default Animation;
+```
