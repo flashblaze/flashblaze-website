@@ -2,8 +2,9 @@
 import { jsx } from 'theme-ui';
 import {
   AiFillGithub,
-  AiOutlineInstagram,
+  AiFillInstagram,
   AiFillTwitterCircle,
+  AiFillYoutube,
   AiFillLinkedin,
 } from 'react-icons/ai';
 
@@ -36,7 +37,17 @@ const Footer = () => (
       target="_blank"
       aria-label="Instagram"
     >
-      <AiOutlineInstagram
+      <AiFillInstagram
+        sx={{ color: 'text', strokeWidth: '1', height: '2em', width: '2em' }}
+      />
+    </a>
+    <a
+      href="https://www.youtube.com/channel/UCQKfDFA1cCAB1Oq5B6Vr7ew"
+      rel="noopener noreferrer"
+      target="_blank"
+      aria-label="YouTube"
+    >
+      <AiFillYoutube
         sx={{ color: 'text', strokeWidth: '1', height: '2em', width: '2em' }}
       />
     </a>
