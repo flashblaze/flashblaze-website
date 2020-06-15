@@ -1,6 +1,6 @@
 ---
-title: 'WIP'
-description: 'WIP'
+title: 'SVG animations in React using react-spring'
+description: 'Post on how to animate svg in React using react-spring'
 date: '2020-06-15'
 ---
 
@@ -29,7 +29,11 @@ in your terminal. Go inside the created project and install react-spring by typi
 npm run start
 ```
 
-in terminal to start the React app. Go to `src` directory and create a new file `Animation.js` which will contain the animation code.
+in terminal to start the React app.
+
+Go to `http://localhost:3000` to view the running app.
+
+Go to `src` directory and create a new file `Animation.js` which will contain the animation code.
 
 3. Remove everything from `App.js` and import `Animation.js`. Inside `Animation.js` type a simple hello world program as a placeholder.
 
@@ -66,7 +70,7 @@ export default Animation;
 
 # Animation
 
-1. Replace the code in `Animation.js` by the following code
+Replace the code in `Animation.js` by the following code
 
 ```js
 // Animation.js
@@ -98,3 +102,143 @@ const Animation = () => {
 
 export default Animation;
 ```
+
+To animate an svg, you need the path length of it. [css-tricks](https://css-tricks.com/svg-line-animation-works/) explains this on how to achieve this using HTML, CSS and vanilla JavaScript which I translated to React.
+
+To get the path length, you'll need a reference to the path which is achieved through `useRef` hook which is used to reference the DOM or React element. `getTotalLength()` gives us the total length.
+
+`useEffect` hook is used to get the length of the svg path as soon as the component is mounted.
+
+## Move the shape already!
+
+Yeah yeah. Now the fun part of animating the circle
+
+Copy the following code in `Animation.js`
+
+```js
+// Animation.js
+import React, { useEffect, useState, useRef } from 'react';
+import { Spring } from 'react-spring/renderprops';
+
+const Animation = () => {
+  const pathRef = useRef();
+  const [offset, setOffset] = useState(null);
+
+  useEffect(() => {
+    setOffset(pathRef.current.getTotalLength());
+  }, [offset]);
+
+  return (
+    <div>
+      {offset ? (
+        <Spring from={{ x: offset }} to={{ x: 0 }}>
+          {(props) => (
+            <svg>
+              <circle
+                strokeDashoffset={props.x}
+                strokeDasharray={offset}
+                strokeWidth="3"
+                cx="100"
+                cy="50"
+                r="40"
+                stroke="black"
+                fill="none"
+                ref={pathRef}
+              />
+            </svg>
+          )}
+        </Spring>
+      ) : (
+        <svg>
+          <circle
+            strokeWidth="3"
+            cx="100"
+            cy="50"
+            r="40"
+            stroke="none"
+            fill="none"
+            ref={pathRef}
+          />
+        </svg>
+      )}
+    </div>
+  );
+};
+
+export default Animation;
+```
+
+To create the animation of circle being completed from length 0 to full length, we need its length which is stored in offset.
+
+Initially, when the component is loaded the `offset` value is null. To get the length, we need the svg. As we do not need to display it, fill is set to none. As soon as `offset` value is set, we display the svg and animate it.
+
+`Spring` renderprop is used to move data from one state to another. `strokeDasharray`defines the length of dashes to display in our svg. Since we want the complete circle, its value should be the length of the circle i.e. `offset`.
+
+`strokeDashoffset` sets the offset value which moves the position of the dashes. Now we animate it from its `offset` value to 0 so it looks like the circle is being drawn.
+
+You can also configure various parameters like _friction_, _tension_, _precision_, etc. The complete list can be found [here](https://www.react-spring.io/docs/props/spring)
+
+This is the modified code which shows what changing some values does
+
+```js
+// Animation.js
+import React, { useEffect, useState, useRef } from 'react';
+import { Spring } from 'react-spring/renderprops';
+
+const Animation = () => {
+  const pathRef = useRef();
+  const [offset, setOffset] = useState(null);
+
+  useEffect(() => {
+    setOffset(pathRef.current.getTotalLength());
+  }, [offset]);
+
+  return (
+    <div>
+      {offset ? (
+        <Spring
+          from={{ x: offset }}
+          to={{ x: 0 }}
+          config={{ tension: 4, friction: 0.5, precision: 0.1 }}
+        >
+          {(props) => (
+            <svg>
+              <circle
+                strokeDashoffset={props.x}
+                strokeDasharray={offset}
+                strokeWidth="3"
+                cx="100"
+                cy="50"
+                r="40"
+                stroke="black"
+                fill="none"
+                ref={pathRef}
+              />
+            </svg>
+          )}
+        </Spring>
+      ) : (
+        <svg>
+          <circle
+            strokeWidth="3"
+            cx="100"
+            cy="50"
+            r="40"
+            stroke="none"
+            fill="none"
+            ref={pathRef}
+          />
+        </svg>
+      )}
+    </div>
+  );
+};
+
+export default Animation;
+```
+
+# Conclusion
+
+[react-spring](https://www.react-spring.io/) is an amazing animation library which is based on physics and gives amazing results based on actual physical properties. I have barely scratched the surface and you can similarly animate opacity, change colours, etc. and have a blast with it.
+
+### You can view the complete project on [GitHub](https://github.com/FlashBlaze/react-spring-animation-demo)
