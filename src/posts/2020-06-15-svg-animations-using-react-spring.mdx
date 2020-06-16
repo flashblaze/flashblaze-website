@@ -184,7 +184,7 @@ export default Animation;
 
 To create the animation of circle being completed from length 0 to full length, we need its length which is stored in offset.
 
-Initially, when the component is loaded the `offset` value is null. To get the length, we need the svg. As we do not need to display it, fill is set to none. As soon as `offset` value is set, we display the svg and animate it.
+Initially, when the component is loaded the `offset` value is null. To get the length, we need the svg. As we do not need to display it, stroke is set to none. As soon as `offset` value is set, we display the svg and animate it.
 
 `Spring` renderprop is used to move data from one state to another. `strokeDasharray`defines the length of dashes to display in our svg. Since we want the complete circle, its value should be the length of the circle i.e. `offset`.
 
