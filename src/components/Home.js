@@ -2,7 +2,8 @@
 import { jsx, useColorMode } from 'theme-ui';
 import { useEffect, useState } from 'react';
 
-import Model from './Model';
+// import Model from './Model';
+import SVGAnimation from './SVGAnimation';
 import PostCard from './PostCard';
 
 const Home = () => {
@@ -45,9 +46,7 @@ const Home = () => {
             3D.
           </p>
         </div>
-        <div css={{ canvas: { outline: 'none' } }}>
-          <Model meshColor={meshColor} />
-        </div>
+        <SVGAnimation />
       </div>
       <div
         sx={{
