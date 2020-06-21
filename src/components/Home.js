@@ -1,22 +1,24 @@
 /**@jsx jsx */
 import { jsx, useColorMode } from 'theme-ui';
 import { useEffect, useState } from 'react';
+import Loadable from '@loadable/component';
 
-// import Model from './Model';
-import SVGAnimation from './SVGAnimation';
+// import SVGAnimation from './SVGAnimation';
 import PostCard from './PostCard';
 
+const LoadableComponent = Loadable(() => import('./SVGAnimation'));
+
 const Home = () => {
-  const [meshColor, setMeshColor] = useState('#333333');
+  const [strokeColor, setStrokeColor] = useState('#333333');
 
   const [colorMode] = useColorMode();
   useEffect(() => {
     if (colorMode === 'default') {
-      setMeshColor('#333333');
+      setStrokeColor('#333333');
     } else {
-      setMeshColor('#ffffff');
+      setStrokeColor('#ffffff');
     }
-  }, [colorMode, meshColor]);
+  }, [colorMode, strokeColor]);
 
   return (
     <div>
@@ -46,7 +48,7 @@ const Home = () => {
             3D.
           </p>
         </div>
-        <SVGAnimation />
+        <LoadableComponent strokeColor={strokeColor} />
       </div>
       <div
         sx={{

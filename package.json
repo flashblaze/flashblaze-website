@@ -14,6 +14,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@loadable/component": "^5.12.0",
     "@mdx-js/mdx": "^1.6.5",
     "@mdx-js/react": "^1.6.5",
     "firebase": "^7.15.1",

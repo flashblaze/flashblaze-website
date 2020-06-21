@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Spring } from 'react-spring/renderprops';
-// import React from 'react';
 
-const SVGAnimation = () => {
+const SVGAnimation = ({ strokeColor }) => {
+  console.log(strokeColor);
   const [offset, setOffset] = useState(0);
   const ref = useRef();
 
@@ -16,7 +16,7 @@ const SVGAnimation = () => {
         <Spring
           from={{ x: offset }}
           to={{ x: 0 }}
-          config={{ duration: 2500, easing: (t) => Math.pow(2, 10 * t - 10) }}
+          config={{ duration: 2000, easing: (t) => Math.pow(2, 10 * t - 10) }}
         >
           {(props) => (
             <svg
@@ -36,7 +36,7 @@ const SVGAnimation = () => {
                     strokeLinecap: 'round',
                     strokeLinejoin: 'round',
                     strokeWidth: 2.1962,
-                    stroke: '#3a3a3a',
+                    stroke: strokeColor,
                   }}
                   ref={ref}
                 />
@@ -60,7 +60,7 @@ const SVGAnimation = () => {
                 strokeLinecap: 'round',
                 strokeLinejoin: 'round',
                 strokeWidth: 2.1962,
-                stroke: 'none',
+                stroke: strokeColor,
               }}
               ref={ref}
             />
