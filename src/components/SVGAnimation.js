@@ -1,43 +1,55 @@
-import React, { useEffect, useState, useRef } from 'react';
+/**@jsx jsx */
+import { useEffect, useState, useRef } from 'react';
+import { jsx, useColorMode } from 'theme-ui';
 import { Spring } from 'react-spring/renderprops';
 
-const SVGAnimation = ({ strokeColor }) => {
-  console.log(strokeColor);
+const SVGAnimation = () => {
   const [offset, setOffset] = useState(0);
   const ref = useRef();
+  const [colorMode] = useColorMode();
 
   useEffect(() => {
     setOffset(ref.current.getTotalLength());
   }, [offset]);
 
   return (
-    <div>
+    <div sx={{ margin: 'auto' }}>
       {offset ? (
         <Spring
-          from={{ x: offset }}
-          to={{ x: 0 }}
-          config={{ duration: 2000, easing: (t) => Math.pow(2, 10 * t - 10) }}
+          from={{
+            x: offset,
+            fill: colorMode === 'default' ? '#1d1d1d' : '#ffffff',
+            strokeColor: '#308fff',
+          }}
+          to={{
+            x: 0,
+            fill: '#308fff',
+            strokeColor: colorMode === 'default' ? '#ffffff' : '#1d1d1d',
+          }}
+          config={{
+            mass: 100,
+            tension: 80,
+            friction: 52,
+            clamp: true,
+          }}
         >
           {(props) => (
             <svg
-              strokeDashoffset={props.x}
               strokeDasharray={offset}
-              width="250"
-              height="248.76"
+              strokeDashoffset={props.x}
+              fill={props.fill}
+              stroke={props.strokeColor}
+              {...props}
+              strokeWidth={1}
+              width="180"
+              height="229.7664‬"
               version="1.1"
-              viewBox="0 0 81.522 81.12"
+              viewBox="0 0 66.146 84.433"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g transform="translate(386.03 295.9)">
+              <g transform="translate(-64.105 -117)">
                 <path
-                  d="m-357.06-215.88h24.32m-28.867-4.7809h33.063m-37.236-5.1158h41.409m-46.78-5.4432h52.15m-57.443-5.7673h62.24m-66.596-6.0347h70.952m-73.192-6.2119h75.432m-77.317-5.9074a39.663 39.663 0 0 1 39.663-39.663 39.663 39.663 0 0 1 39.663 39.663"
-                  style={{
-                    fill: 'none',
-                    strokeLinecap: 'round',
-                    strokeLinejoin: 'round',
-                    strokeWidth: 2.1962,
-                    stroke: strokeColor,
-                  }}
+                  d="m64.105 198.39v-81.385l57.269 62.563v-59.462h8.8765v81.332l-57.269-61.868v58.82z"
                   ref={ref}
                 />
               </g>
@@ -46,22 +58,16 @@ const SVGAnimation = ({ strokeColor }) => {
         </Spring>
       ) : (
         <svg
-          width="250"
-          height="248.76"
+          width="180"
+          height="229.7664‬"
           version="1.1"
-          viewBox="0 0 81.522 81.12"
+          viewBox="0 0 66.146 84.433"
           xmlns="http://www.w3.org/2000/svg"
+          style={{ strokeWidth: 1, stroke: 'none', fill: 'none' }}
         >
-          <g transform="translate(386.03 295.9)">
+          <g transform="translate(-64.105 -117)">
             <path
-              d="m-357.06-215.88h24.32m-28.867-4.7809h33.063m-37.236-5.1158h41.409m-46.78-5.4432h52.15m-57.443-5.7673h62.24m-66.596-6.0347h70.952m-73.192-6.2119h75.432m-77.317-5.9074a39.663 39.663 0 0 1 39.663-39.663 39.663 39.663 0 0 1 39.663 39.663"
-              style={{
-                fill: 'none',
-                strokeLinecap: 'round',
-                strokeLinejoin: 'round',
-                strokeWidth: 2.1962,
-                stroke: strokeColor,
-              }}
+              d="m64.105 198.39v-81.385l57.269 62.563v-59.462h8.8765v81.332l-57.269-61.868v58.82z"
               ref={ref}
             />
           </g>
