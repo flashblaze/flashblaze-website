@@ -4,13 +4,13 @@ import { jsx, useColorMode } from 'theme-ui';
 import { Spring } from 'react-spring/renderprops';
 
 const SVGAnimation = () => {
-  const [offset, setOffset] = useState(0);
+  const [offset, setOffset] = useState(null);
   const ref = useRef();
   const [colorMode] = useColorMode();
 
   useEffect(() => {
     setOffset(ref.current.getTotalLength());
-  }, [offset]);
+  }, []);
 
   return (
     <div sx={{ margin: 'auto' }}>
@@ -42,7 +42,6 @@ const SVGAnimation = () => {
               {...props}
               strokeWidth={1}
               width="180"
-              height="229.7664‬"
               version="1.1"
               viewBox="0 0 66.146 84.433"
               xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +58,6 @@ const SVGAnimation = () => {
       ) : (
         <svg
           width="180"
-          height="229.7664‬"
           version="1.1"
           viewBox="0 0 66.146 84.433"
           xmlns="http://www.w3.org/2000/svg"
