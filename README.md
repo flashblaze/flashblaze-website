@@ -3,7 +3,7 @@
 Built using 
 - [React](https://reactjs.org/) 
 - [Gatsby](https://gatsbyjs.org/)
-- [react-three-fiber](https://github.com/react-spring/react-three-fiber)
+- [react-spring](https://github.com/pmndrs/react-spring)
 - [theme-ui](https://theme-ui.com/)
 
 Deployed on [Vercel](https://vercel.com) using Now.
