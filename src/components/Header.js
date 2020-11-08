@@ -56,15 +56,15 @@ const Header = () => {
           />
         )}
       </IconContext.Provider>
-      <div sx={{ display: 'flex', flexDirection: 'row' }}>
+      <div>
         <Link to="/" sx={{ variant: 'text.heading', mr: 4 }}>
-          <p>Home</p>
+          <span>Home</span>
         </Link>
         <Link to="/posts" sx={{ variant: 'text.heading', mr: 4 }}>
-          <p>Posts</p>
+          <span>Posts</span>
         </Link>
         <Link to="/about" sx={{ variant: 'text.heading', mr: 4 }}>
-          <p>About</p>
+          <span>About</span>
         </Link>
       </div>
     </header>
