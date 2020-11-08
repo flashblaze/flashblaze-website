@@ -19,11 +19,11 @@ const SVGAnimation = () => {
           from={{
             x: offset,
             fill: colorMode === 'default' ? '#1d1d1d' : '#ffffff',
-            strokeColor: '#308fff',
+            strokeColor: '#0070f3',
           }}
           to={{
             x: 0,
-            fill: '#308fff',
+            fill: '#0070f3',
             strokeColor: colorMode === 'default' ? '#ffffff' : '#1d1d1d',
           }}
           config={{
@@ -45,6 +45,7 @@ const SVGAnimation = () => {
               version="1.1"
               viewBox="0 0 66.146 84.433"
               xmlns="http://www.w3.org/2000/svg"
+              aria-label="N logo animation"
             >
               <g transform="translate(-64.105 -117)">
                 <path

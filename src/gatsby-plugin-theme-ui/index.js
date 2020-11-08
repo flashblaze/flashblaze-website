@@ -5,15 +5,17 @@ export default {
   colors: {
     text: '#333333',
     background: '#ffffff',
-    primary: '#308fff',
+    primary: '#0070f3',
     '&:hover': {
       text: '#0059c1',
     },
+    title: '#0070f3',
     modes: {
       dark: {
         text: '#ffffff',
         background: '#1d1d1d',
-        primary: '#308fff',
+        primary: '#0070f3',
+        title: '#308fff',
       },
     },
   },
@@ -22,14 +24,13 @@ export default {
       maxWidth: '470px',
       height: '150px',
       backgroundColor: 'primary',
-      boxShadow: '0px 10px 25px rgba(0, 0, 0, 0.15)',
       transitionProperty: 'boxShadow',
       transition: '0.2s ease 0s',
-      borderRadius: '20px',
+      borderRadius: '5px',
       padding: 5,
       color: '#ffffff',
       '&:hover': {
-        boxShadow: '0px 20px 35px rgba(0, 0, 0, 0.35)',
+        boxShadow: '0px 10px 20px 0px rgba(0,0,0,0.25)',
       },
     },
   },
@@ -38,15 +39,19 @@ export default {
       color: 'text',
       textDecoration: 'none',
       '&:hover': {
-        color: '#308fff',
+        color: '#0059c1',
       },
     },
     title: {
-      color: 'primary',
+      color: 'title',
       textDecoration: 'none',
       '&:hover': {
         color: '#0059c1',
       },
+    },
+    viewCount: {
+      color: '#text',
+      fontStyle: 'italic',
     },
   },
   sizes: {
@@ -54,7 +59,7 @@ export default {
   },
   styles: {
     a: {
-      color: 'primary',
+      color: 'title',
       textDecoration: 'none',
       '&:hover': {
         color: '#0059c1',

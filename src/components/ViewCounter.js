@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react';
+/**@jsx jsx */
+import { jsx } from 'theme-ui';
+import { useEffect, useState } from 'react';
 import firebase from 'gatsby-plugin-firebase';
 import incrementViews from '../lib/increment-views';
 
@@ -27,7 +29,7 @@ const ViewCounter = ({ id }) => {
   // }, [id]);
 
   return (
-    <div style={{ color: '#7e7e7e' }}>
+    <div sx={{ variant: 'text.viewCount' }}>
       {viewCount ? viewCount : `---`} views
     </div>
   );

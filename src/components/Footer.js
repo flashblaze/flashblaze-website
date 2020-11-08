@@ -25,10 +25,10 @@ const Footer = () => (
       href="https://github.com/FlashBlaze"
       rel="noopener noreferrer"
       target="_blank"
-      aria-label="GitHub"
     >
       <AiFillGithub
         sx={{ color: 'text', strokeWidth: '1', height: '2em', width: '2em' }}
+        aria-label="GitHub"
       />
     </a>
     <a
@@ -39,6 +39,7 @@ const Footer = () => (
     >
       <AiFillInstagram
         sx={{ color: 'text', strokeWidth: '1', height: '2em', width: '2em' }}
+        aria-label="Instagram"
       />
     </a>
     <a
@@ -49,6 +50,7 @@ const Footer = () => (
     >
       <AiFillYoutube
         sx={{ color: 'text', strokeWidth: '1', height: '2em', width: '2em' }}
+        aria-label="YouTube"
       />
     </a>
     <a
@@ -59,6 +61,7 @@ const Footer = () => (
     >
       <AiFillTwitterCircle
         sx={{ color: 'text', strokeWidth: '1', height: '2em', width: '2em' }}
+        aria-label="Twitter"
       />
     </a>
     <a
@@ -69,6 +72,7 @@ const Footer = () => (
     >
       <AiFillLinkedin
         sx={{ color: 'text', strokeWidth: '1', height: '2em', width: '2em' }}
+        aria-label="LinkedIn"
       />
     </a>
   </footer>

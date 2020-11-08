@@ -35,9 +35,13 @@ const Header = () => {
             onClick={() => {
               setColorMode(colorMode === 'default' ? 'dark' : 'default');
             }}
+            role="button"
+            tabIndex={0}
           />
         ) : (
           <FiSun
+            role="button"
+            tabIndex={0}
             aria-label="Activate Light Mode"
             title="Activate Light Mode"
             sx={{
