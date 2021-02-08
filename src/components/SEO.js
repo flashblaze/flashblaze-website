@@ -29,7 +29,12 @@ const Head = (props) => {
         />
         <meta name="twitter:title" content={props.title} />
         <meta name="twitter:description" content={props.description} />
-
+        <script
+          async
+          defer
+          data-domain="flashblaze.xyz"
+          src="https://flashblaze.xyz/js/index.js"
+        ></script>
         <html lang="en" />
       </Helmet>
     </div>
