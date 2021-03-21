@@ -65,5 +65,11 @@ export default {
         color: '#0059c1',
       },
     },
+    h1: {
+      '.remarkLink': {
+        fill: 'text',
+        marginRight: '10px',
+      },
+    },
   },
 };
