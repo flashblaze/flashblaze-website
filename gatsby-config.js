@@ -73,6 +73,12 @@ module.exports = {
             },
           },
           {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              className: `remarkLink`,
+            },
+          },
+          {
             resolve: `gatsby-remark-prismjs`,
           },
         ],
