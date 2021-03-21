@@ -71,5 +71,23 @@ export default {
         marginRight: '10px',
       },
     },
+    h2: {
+      '.remarkLink': {
+        fill: 'text',
+        marginRight: '10px',
+      },
+    },
+    h3: {
+      '.remarkLink': {
+        fill: 'text',
+        marginRight: '10px',
+      },
+    },
+    h4: {
+      '.remarkLink': {
+        fill: 'text',
+        marginRight: '10px',
+      },
+    },
   },
 };
