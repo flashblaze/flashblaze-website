@@ -1,17 +1,17 @@
 import Typography from 'typography';
 
 const typography = new Typography({
-  baseFontSize: '18rem',
+  baseFontSize: '16px',
   baseLineHeight: 1.5,
-  headerFontFamily: ['Rubik', 'sans-serif'],
-  bodyFontFamily: ['Open Sans', 'sans-serif'],
+  headerFontFamily: ['Inter', 'sans-serif'],
+  bodyFontFamily: ['Inter', 'sans-serif'],
   googleFonts: [
     {
-      name: 'Rubik',
+      name: 'Inter',
       styles: ['700'],
     },
     {
-      name: 'Open Sans',
+      name: 'Inter',
       styles: ['400', '700'],
     },
   ],

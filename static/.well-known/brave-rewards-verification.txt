@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: flashblaze.xyz
+Token: 92ccff22290d83f9b1b17426d8e10a637aea345ec3fee2d52eb2801bb0fe4fcb

@@ -1,5 +1,5 @@
-export default {
-  breakpoints: ['360px', '720px', '1024px'],
+const theme = {
+  breakpoints: ['360px', '960px', '1024px'],
   space: [0, 4, 8, 12, 16, 20, 32, 48, 64, 128, 256, 512],
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
   colors: {
@@ -35,6 +35,9 @@ export default {
     },
   },
   text: {
+    content: {
+      color: 'text',
+    },
     heading: {
       color: 'text',
       textDecoration: 'none',
@@ -50,14 +53,20 @@ export default {
       },
     },
     viewCount: {
-      color: '#text',
+      color: 'text',
       fontStyle: 'italic',
     },
   },
   sizes: {
-    container: 720,
+    container: 960,
   },
   styles: {
+    p: {
+      color: 'text',
+    },
+    li: {
+      color: 'text',
+    },
     a: {
       color: 'title',
       textDecoration: 'none',
@@ -70,18 +79,21 @@ export default {
         fill: 'text',
         marginRight: '10px',
       },
+      color: 'text',
     },
     h2: {
       '.remarkLink': {
         fill: 'text',
         marginRight: '10px',
       },
+      color: 'text',
     },
     h3: {
       '.remarkLink': {
         fill: 'text',
         marginRight: '10px',
       },
+      color: 'text',
     },
     h4: {
       '.remarkLink': {
@@ -91,3 +103,5 @@ export default {
     },
   },
 };
+
+export default theme;

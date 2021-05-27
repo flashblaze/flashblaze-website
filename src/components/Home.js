@@ -10,10 +10,12 @@ const Home = () => {
       <div
         sx={{
           display: 'flex',
-          p: [3, 3, 3],
           mt: [8, 8, 8],
           flexDirection: ['column', 'column', 'row'],
           maxWidth: ['container', 'container', 'container'],
+          justifyContent: ['', '', 'space-between'],
+          alignItems: ['center', 'center', 'center'],
+          variant: 'text.content',
         }}
       >
         <div
@@ -21,27 +23,23 @@ const Home = () => {
             display: 'flex',
             flexDirection: 'column',
             maxWidth: '470px',
-            p: 3,
           }}
         >
           <h1>Neeraj Lagwankar</h1>
           <p>
-            <b>React</b> and <b>Nodejs</b> developer.
-          </p>
-          <p>
-            I'm a passionate graphics designer and animator with an interest in
-            3D.
+            <b>React</b> and <b>Nodejs</b> developer with an interest in 2D/3D
+            animation and design.
           </p>
         </div>
         <SVGAnimation />
       </div>
       <div
         sx={{
-          p: 5,
+          mt: [5, 5, 0],
           maxWidth: ['470px', '470px', '470px'],
         }}
       >
-        <h3 sx={{ p: 1 }}>Latest Post</h3>
+        <h3 sx={{ p: 1, variant: 'text.content' }}>Latest Post</h3>
         <PostCard />
       </div>
     </div>

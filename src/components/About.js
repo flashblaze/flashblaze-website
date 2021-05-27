@@ -13,71 +13,69 @@ const About = () => {
         display: 'flex',
         flexDirection: 'column',
         maxWidth: ['container', 'container', 'container'],
-        p: [5, 5, 3],
         mt: [7, 7, 8],
+        variant: 'text.content',
       }}
     >
-      <div>
-        <h2>About me</h2>
-        <div>
-          <p>
-            I'm a {age} year old front-end developer who likes to work with{' '}
-            <b>React</b> and <b>Nodejs</b>. I like building minimalist UIs and
-            everything I have done can be found on{' '}
-            <Link
-              href="https://github.com/FlashBlaze"
-              rel="noopener noreferrer"
-              target="_blank"
-              aria-label="GitHub"
-            >
-              GitHub
-            </Link>
-            . <br />I also like to develop some simple scripts using{' '}
-            <b>Python</b> such as{' '}
-            <Link
-              href="https://github.com/FlashBlaze/yts-downloader"
-              rel="noopener noreferrer"
-              target="_blank"
-              aria-label="yts-downloader link"
-            >
-              yts-downloader
-            </Link>{' '}
-            and{' '}
-            <Link
-              href="https://github.com/FlashBlaze/reddit-bots"
-              rel="noopener noreferrer"
-              target="_blank"
-              aria-label="reddit-bots link"
-            >
-              reddit-bots
-            </Link>
-            . Recently I'm also getting into minor app development using{' '}
-            <b>Flutter</b>. You can find the app <i>Hacker News Reader</i> on{' '}
-            <Link
-              href="https://play.google.com/store/apps/details?id=com.flashblaze.ycnews"
-              rel="noopener noreferrer"
-              target="_blank"
-              aria-label="Hacker News Reader link"
-            >
-              Play Store
-            </Link>{' '}
-            and the source code on{' '}
-            <Link
-              href="https://github.com/FlashBlaze/ycnews"
-              rel="noopener noreferrer"
-              target="_blank"
-              aria-label="GitHub Hacker News Reader link"
-            >
-              GitHub
-            </Link>
-          </p>
-          <p>
-            I also love working with After Effects, Photoshop, Gimp and Blender.
-          </p>
-        </div>
-      </div>
+      <h2>About me</h2>
+      <p>
+        I'm a {age} year old front-end developer who likes to work with{' '}
+        <b>React</b> and <b>Nodejs</b>. I like building minimalist UIs and
+        everything I have done can be found on{' '}
+        <Link
+          href="https://github.com/flashblaze"
+          rel="noopener noreferrer"
+          target="_blank"
+          aria-label="GitHub"
+        >
+          GitHub
+        </Link>
+        . <br />I also like to develop some simple scripts using <b>Python</b>{' '}
+        such as{' '}
+        <Link
+          href="https://github.com/flashblaze/yts-downloader"
+          rel="noopener noreferrer"
+          target="_blank"
+          aria-label="yts-downloader link"
+        >
+          yts-downloader
+        </Link>{' '}
+        and{' '}
+        <Link
+          href="https://github.com/flashblaze/reddit-bots"
+          rel="noopener noreferrer"
+          target="_blank"
+          aria-label="reddit-bots link"
+        >
+          reddit-bots
+        </Link>
+        . My latest full stack project{' '}
+        <Link
+          href="https://notesbin.xyz"
+          rel="noopener noreferrer"
+          target="_blank"
+          aria-label="notesbin website link"
+        >
+          notesbin
+        </Link>{' '}
+        which is an open source note sharing app is live and source is available
+        on{' '}
+        <Link
+          href="https://github.com/flashblaze/notesbin"
+          rel="noopener noreferrer"
+          target="_blank"
+          aria-label="GitHub notesbin link"
+        >
+          GitHub
+        </Link>
+        .
+      </p>
+      <p>
+        I also love working with Blender, Natron, After Effects, Photoshop and
+        Gimp.
+      </p>
 
-      <div sx={{ mt: 7 }}>
+      <div sx={{ mt: 5 }}>
         <h2>Contact me</h2>
         <p>
           Get in touch:{' '}
@@ -89,7 +87,7 @@ const About = () => {
         <ul>
           <li>
             <Link
-              href="https://github.com/FlashBlaze"
+              href="https://github.com/flashblaze"
               rel="noopener noreferrer"
               target="_blank"
               aria-label="GitHub link"
