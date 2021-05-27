@@ -22,7 +22,7 @@ const Footer = () => (
     }}
   >
     <a
-      href="https://github.com/FlashBlaze"
+      href="https://github.com/flashblaze"
       rel="noopener noreferrer"
       target="_blank"
     >

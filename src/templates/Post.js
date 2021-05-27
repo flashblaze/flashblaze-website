@@ -9,7 +9,7 @@ import ViewCounter from '../components/ViewCounter';
 import SEO from '../components/SEO';
 
 export const query = graphql`
-  query($slug: String!) {
+  query ($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
       frontmatter {
         title
@@ -38,7 +38,6 @@ const Post = (props) => {
           display: 'flex',
           maxWidth: ['container', 'container', 'container'],
           flexDirection: 'column',
-          p: [3, 3, 3],
           mt: [7, 7, 9],
         }}
       >
@@ -48,12 +47,13 @@ const Post = (props) => {
           slug={'posts/' + postSlug}
         />
         <div sx={{ mb: 7 }}>
-          <h1>{props.data.mdx.frontmatter.title}</h1>
+          <h1 sx={{ variant: 'text.content' }}>
+            {props.data.mdx.frontmatter.title}
+          </h1>
           <div sx={{ display: 'flex', justifyContent: 'space-between' }}>
-            <p>{parsedDate}</p>
+            <p sx={{ variant: 'text.content' }}>{parsedDate}</p>
             {postSlug ? <ViewCounter id={postSlug} /> : null}
           </div>
-
           <hr />
         </div>
         <MDXRenderer>{props.data.mdx.body}</MDXRenderer>

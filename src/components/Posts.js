@@ -31,7 +31,6 @@ const Posts = () => {
       sx={{
         display: 'flex',
         maxWidth: ['container', 'container', 'container'],
-        p: [5, 5, 3],
         mt: [7, 7, 9],
       }}
     >
@@ -51,7 +50,7 @@ const Posts = () => {
               >
                 <h2>{edge.node.frontmatter.title}</h2>
               </Link>
-              <p>{parsedDate}</p>
+              <p sx={{ variant: 'text.content' }}>{parsedDate}</p>
             </div>
           );
         })}

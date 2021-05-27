@@ -16,7 +16,7 @@ const Header = () => {
         mt: 5,
         p: 4,
         justifyContent: 'space-between',
-        maxWidth: '720px',
+        maxWidth: '960px',
       }}
     >
       <IconContext.Provider
@@ -28,6 +28,7 @@ const Header = () => {
             title="Activate Dark Mode"
             sx={{
               fill: 'text',
+              color: 'text',
               ':hover': { cursor: 'pointer', opacity: 1 },
               transition: 'opacity 0.3s ease',
               opacity: 0.7,
@@ -46,6 +47,7 @@ const Header = () => {
             title="Activate Light Mode"
             sx={{
               fill: 'text',
+              color: 'text',
               ':hover': { cursor: 'pointer', opacity: 1 },
               transition: 'opacity 0.3s ease',
               opacity: 0.7,
@@ -56,14 +58,14 @@ const Header = () => {
           />
         )}
       </IconContext.Provider>
-      <div>
+      <div sx={{ display: 'flex' }}>
         <Link to="/" sx={{ variant: 'text.heading', mr: 4 }}>
           <span>Home</span>
         </Link>
         <Link to="/posts" sx={{ variant: 'text.heading', mr: 4 }}>
           <span>Posts</span>
         </Link>
-        <Link to="/about" sx={{ variant: 'text.heading', mr: 4 }}>
+        <Link to="/about" sx={{ variant: 'text.heading' }}>
           <span>About</span>
         </Link>
       </div>

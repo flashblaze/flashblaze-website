@@ -4,7 +4,7 @@ import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import Posts from '../components/Posts';
 
-const Index = () => {
+const PostsPage = () => {
   return (
     <Layout>
       <SEO title="Posts" description="My writings" slug="posts" />
@@ -13,4 +13,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default PostsPage;
