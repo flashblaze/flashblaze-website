@@ -11,5 +11,15 @@
       "APP_ID": "@flashfb-appid",
       "MEASUREMENT_ID": "@flashfb-measurementid"
     }
-  }
+  },
+  "redirects": [
+    {
+      "source": "/js/index.js",
+      "destination": "https://plausible.io/js/plausible.js"
+    },
+    {
+      "source": "/api/event",
+      "destination": "https://plausible.io/api/event"
+    }
+  ]
 }

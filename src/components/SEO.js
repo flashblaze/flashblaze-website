@@ -33,7 +33,7 @@ const Head = (props) => {
           async
           defer
           data-domain="flashblaze.xyz"
-          src="https://flashblaze.xyz/js/index.js"
+          src="/js/index.js"
         ></script>
         <html lang="en" />
       </Helmet>
