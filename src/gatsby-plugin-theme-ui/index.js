@@ -95,10 +95,13 @@ const theme = {
       lineHeight: 'body',
       color: 'text',
     },
+    ol: {
+      marginLeft: '1.25rem',
+      padding: 0,
+    },
     li: {
       fontFamily: 'body',
       lineHeight: 'body',
-      display: 'none',
     },
     a: {
       fontFamily: 'body',
