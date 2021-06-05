@@ -16,6 +16,7 @@ const Header = () => {
         mt: 5,
         p: 4,
         justifyContent: 'space-between',
+        alignItems: 'center',
         maxWidth: '960px',
       }}
     >
