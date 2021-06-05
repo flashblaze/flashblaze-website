@@ -29,9 +29,9 @@ const ViewCounter = ({ id }) => {
   // }, [id]);
 
   return (
-    <div sx={{ variant: 'text.viewCount' }}>
+    <p sx={{ variant: 'text.viewCount' }}>
       {viewCount ? viewCount : `---`} views
-    </div>
+    </p>
   );
 };
 

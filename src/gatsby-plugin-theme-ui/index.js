@@ -1,7 +1,20 @@
 const theme = {
   breakpoints: ['360px', '960px', '1024px'],
-  space: [0, 4, 8, 12, 16, 20, 32, 48, 64, 128, 256, 512],
+  fonts: {
+    body: 'Inter, sans-serif',
+    heading: 'Inter, sans-serif',
+  },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
+  fontWeights: {
+    body: 400,
+    heading: 700,
+    bold: 700,
+  },
+  lineHeights: {
+    body: 1.5,
+    heading: 1.1,
+  },
+  space: [0, 4, 8, 12, 16, 20, 32, 48, 64, 128, 256, 512],
   colors: {
     text: '#333333',
     background: '#ffffff',
@@ -36,9 +49,13 @@ const theme = {
   },
   text: {
     content: {
+      fontFamily: 'body',
+      lineHeight: 'body',
       color: 'text',
     },
     heading: {
+      fontFamily: 'heading',
+      lineHeight: 'heading',
       color: 'text',
       textDecoration: 'none',
       '&:hover': {
@@ -46,6 +63,8 @@ const theme = {
       },
     },
     title: {
+      fontFamily: 'heading',
+      lineHeight: 'heading',
       color: 'title',
       textDecoration: 'none',
       '&:hover': {
@@ -53,6 +72,7 @@ const theme = {
       },
     },
     viewCount: {
+      fontFamily: 'body',
       color: 'text',
       fontStyle: 'italic',
     },
@@ -61,13 +81,30 @@ const theme = {
     container: 960,
   },
   styles: {
+    root: {
+      ul: {
+        li: {
+          marginBottom: 'calc(1.5rem / 2)',
+        },
+        marginLeft: '1.25rem',
+        padding: 0,
+      },
+    },
     p: {
+      fontFamily: 'body',
+      lineHeight: 'body',
       color: 'text',
+    },
+    ol: {
+      marginLeft: '1.25rem',
+      padding: 0,
     },
     li: {
-      color: 'text',
+      fontFamily: 'body',
+      lineHeight: 'body',
     },
     a: {
+      fontFamily: 'body',
       color: 'title',
       textDecoration: 'none',
       '&:hover': {
@@ -75,6 +112,7 @@ const theme = {
       },
     },
     h1: {
+      fontFamily: 'heading',
       '.remarkLink': {
         fill: 'text',
         marginRight: '10px',
@@ -82,6 +120,7 @@ const theme = {
       color: 'text',
     },
     h2: {
+      fontFamily: 'heading',
       '.remarkLink': {
         fill: 'text',
         marginRight: '10px',
@@ -89,6 +128,7 @@ const theme = {
       color: 'text',
     },
     h3: {
+      fontFamily: 'heading',
       '.remarkLink': {
         fill: 'text',
         marginRight: '10px',
@@ -96,6 +136,7 @@ const theme = {
       color: 'text',
     },
     h4: {
+      fontFamily: 'heading',
       '.remarkLink': {
         fill: 'text',
         marginRight: '10px',
