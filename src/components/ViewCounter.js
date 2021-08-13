@@ -1,32 +1,36 @@
 /**@jsx jsx */
 import { jsx } from 'theme-ui';
 import { useEffect, useState } from 'react';
-import firebase from 'gatsby-plugin-firebase';
-import incrementViews from '../lib/increment-views';
+
+import supabase from '../utils/supabase';
 
 const ViewCounter = ({ id }) => {
-  const [viewCount, setViewCount] = useState('');
+  const [viewCount, setViewCount] = useState(null);
 
   useEffect(() => {
-    // 1 is displayed for a split second and then the correct count
-    // This is a workaround this
-    const onViews = (newViews) => {
-      setViewCount(newViews.val() === 1 ? 0 : newViews.val());
-    };
-
-    incrementViews(id);
-
-    firebase.database().ref(`/views`).child(id).on(`value`, onViews);
-
-    return () => {
-      if (firebase.database()) {
-        firebase.database().ref(`/views`).child(id).off(`value`, onViews);
-      }
-    };
+    if (id) {
+      (async () => {
+        const { data, error } = await supabase
+          .from('views')
+          .select()
+          .match({ post: id });
+        if (data.length === 0) {
+          await supabase.from('views').insert([{ post: id, views: 1 }]);
+          setViewCount(1);
+        }
+        if (data.length > 0) {
+          await supabase
+            .from('views')
+            .update({ views: data[0].views + 1 })
+            .match({ post: id });
+          setViewCount(data[0].views + 1);
+        }
+        if (error) {
+          console.log(error.message);
+        }
+      })();
+    }
   }, [id]);
-
-  // useEffect(() => {
-  // }, [id]);
 
   return (
     <p sx={{ variant: 'text.viewCount' }}>
