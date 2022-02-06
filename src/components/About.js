@@ -51,7 +51,7 @@ const About = () => {
         </Link>
         . My latest full stack project{' '}
         <Link
-          href="https://notesbin.xyz"
+          href="https://notes.flashblaze.xyz"
           rel="noopener noreferrer"
           target="_blank"
           aria-label="notesbin website link"
@@ -61,7 +61,7 @@ const About = () => {
         which is an open source note sharing app is live and source is available
         on{' '}
         <Link
-          href="https://github.com/flashblaze/notesbin"
+          href="https://github.com/flashblaze/notesbin-supabase"
           rel="noopener noreferrer"
           target="_blank"
           aria-label="GitHub notesbin link"
