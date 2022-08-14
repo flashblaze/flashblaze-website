@@ -7,6 +7,7 @@ module.exports = {
     siteUrl: `https://flashblaze.xyz`,
   },
   plugins: [
+    `gatsby-plugin-preact`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-theme-ui`,
