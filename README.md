@@ -1,4 +1,6 @@
-# [flashblaze.xyz](https://flashblaze.xyz)
+# New website built using Astro: [flashblaze.xyz](https://flashblaze.xyz)
+
+## Old website: [old.flashblaze.xyz](https://old.flashblaze.xyz)
 
 ## Built using 
 - [React](https://reactjs.org/) 
