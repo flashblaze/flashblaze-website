@@ -1,4 +1,4 @@
-# New website built using Astro: [flashblaze.xyz](https://flashblaze.xyz)
+# New website can be found at [flashblaze.xyz](https://flashblaze.xyz) and the repo is at [flashblaze-astro](https://github.com/flashblaze/flashblaze-astro)
 
 ## Old website: [old.flashblaze.xyz](https://old.flashblaze.xyz)
 
